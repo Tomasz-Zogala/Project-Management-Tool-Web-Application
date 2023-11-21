@@ -1,0 +1,31 @@
+<div class="logo">
+  <p> ProjectFlow </p>
+</div>
+<div class="container" #ngForm>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()" class="form-column">
+    <div class="form-row">
+      <label for="username"> Enter Username: </label>
+      <input type="text" id="username" name="username" [(ngModel)]="user.username" required>
+    </div>
+
+    <div class="form-row">
+      <label for="password"> Enter Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="user.password" required>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<!-- Testing HTML blocks -->
+
+<p class="container" *ngIf="submited"> TEST  {{ user.username }} {{ user.password }} TEST</p>
+
+<p class="container">
+  touched: {{ userForm.touched }} <br>
+  untouched: {{ userForm.untouched }} <br>
+  dirty: {{ userForm.dirty }} <br>
+  pristine: {{ userForm.pristine }} <br>
+  valid: {{ userForm.valid }} <br>
+  invalid: {{ userForm.invalid }} <br>
+</p>
