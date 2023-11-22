@@ -1,96 +1,80 @@
+$color_1: #ecf0f1;
+$color_2: #3498db;
+$background-color_1: #2c3e50;
+
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 20px 12px 20px;
-  background-color: #1b2631;
-  color: #ecf0f1;
+  background-color: $background-color_1;
+  color: $color_1;
   position: sticky;
   top: 0;
-
-  /* Left Side */
-  .logo {
+}
+.logo {
+  margin: 0;
+  font-size: 30px;
+  a {
+    text-decoration: none;
+    &:visited {
+      color: $color_1;
+    }
+    &:hover {
+      color: $color_2;
+    }
+  }
+}
+.nav-bar {
+  h1 {
     margin: 0;
-    font-size: 30px;
-
-    a {
-      text-decoration: none;
-
-      &:visited {
-        color: #ecf0f1;
-      }
-
-      &:hover {
-        color: #3498db;
-      }
+    font-size: 24px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  li {
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  a {
+    text-decoration: none;
+    &:visited {
+      color: $color_1;
+    }
+    &:hover {
+      color: $color_2;
     }
   }
-
-  /* Middle Side */
-  .nav-bar {
-    h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-
-      li:not(:last-child) {
-        margin-right: 24px;
-      }
-
-      li {
-        font-size: 18px;
-        cursor: pointer;
-        transition: color 0.3s ease;
-
-        a {
-          text-decoration: none;
-
-          &:visited {
-            color: #ecf0f1;
-          }
-
-          &:hover {
-            color: #3498db;
-          }
-        }
-      }
-    }
+}
+.right-nav-bar {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
   }
-
-  /* Right Side */
-  .right-nav-bar {
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-
-      li:not(:last-child) {
-        margin-right: 24px;
-      }
-
-      li {
-        cursor: pointer;
-        font-size: 22px;
-
-        a {
-          text-decoration: none;
-
-          &:visited {
-            color: #ecf0f1;
-          }
-
-          &:hover {
-            color: #3498db;
-          }
-        }
-      }
+  li {
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
+    cursor: pointer;
+    font-size: 22px;
+  }
+  a {
+    text-decoration: none;
+    &:visited {
+      color: $color_1;
+    }
+    &:hover {
+      color: $color_2;
     }
   }
 }
