@@ -1,23 +1,24 @@
 <div class="container">
-    <h1 class="logo"> ProjectFlow </h1>
+    <h1 class="logo"> <a routerLink="/"> ProjectFlow </a> </h1>
     <div *ngIf="isLoggedIn" class="nav-bar">
         <ul>
-            <li> Main </li>
-            <li> My Tickets </li>
-            <li> My Projects </li>
-            <li> Organization </li>
+          <li><a routerLink="/"> Main </a></li>
+          <li><a routerLink="/tickets"> Tickets </a></li>
+          <li><a routerLink="/projects"> Projects </a></li>
+          <li><a routerLink="/organization"> Organization </a></li>
         </ul>
     </div>
     <div *ngIf="isLoggedIn" class="right-nav-bar">
         <ul>
-            <li> Profile </li>
-            <li> Setting </li>
+          <li><a routerLink="/profile"> Profile </a></li>
+          <li><a routerLink="/settings"> Setting </a></li>
         </ul>
     </div>
     <div *ngIf="!isLoggedIn" class="right-nav-bar">
         <ul>
-            <li> Sign Up </li>
-            <li> Login </li>
+          <li><a routerLink="/signup"> Sign Up </a></li>
+          <li><a routerLink="/signin"> Sign In </a></li>
         </ul>
     </div>
 </div>
+<router-outlet />

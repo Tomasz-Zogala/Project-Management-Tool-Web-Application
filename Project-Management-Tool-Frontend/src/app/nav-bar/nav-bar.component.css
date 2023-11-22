@@ -14,6 +14,18 @@
     font-size: 30px;
 }
 
+.logo a {
+  text-decoration: none;
+}
+
+.logo a:visited {
+  color: #ecf0f1;
+}
+
+.logo a:hover {
+  color: #3498db;
+}
+
 /*Middle Side*/
 
 .nav-bar h1 {
@@ -60,6 +72,14 @@
     font-size: 22px;
 }
 
-.right-nav-bar li:hover {
-    color: #3498db;
+.right-nav-bar a {
+  text-decoration: none;
+}
+
+.right-nav-bar a:visited {
+  color: #ecf0f1;
+}
+
+.right-nav-bar a:hover {
+  color: #3498db;
 }
