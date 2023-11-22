@@ -1,0 +1,34 @@
+<div class="container">
+    <h1 class="logo"> ProjectFlow </h1>
+
+    <div class="form-container">
+        <h2>Sign In</h2>
+
+        <form #signInForm="ngForm" (ngSubmit)="signIn(signInForm)">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" ngModel required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" ngModel required>
+            </div>
+
+            <button type="submit" [disabled]="signInForm.invalid">Sign In</button>
+        </form>
+    </div>
+</div>
+
+<!--&lt;!&ndash; Testing HTML blocks &ndash;&gt;-->
+
+<!--<p class="container" *ngIf="submited"> TEST  {{ user.username }} {{ user.password }} TEST</p>-->
+
+<!--<p class="container">-->
+<!--    touched: {{ signInForm.touched }} <br>-->
+<!--    untouched: {{ signInForm.untouched }} <br>-->
+<!--    dirty: {{ signInForm.dirty }} <br>-->
+<!--    pristine: {{ signInForm.pristine }} <br>-->
+<!--    valid: {{ signInForm.valid }} <br>-->
+<!--    invalid: {{ signInForm.invalid }} <br>-->
+<!--</p>-->

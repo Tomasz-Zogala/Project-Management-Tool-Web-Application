@@ -11,10 +11,4 @@ import { CommonModule } from '@angular/common';
 export class NavBarComponent {
   isLoggedIn : boolean = false;
 
-  signUp(){
-
-  }
-  login() {
-
-  }
 }
