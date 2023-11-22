@@ -1,0 +1,26 @@
+.logo {
+    font-size: 50px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+}

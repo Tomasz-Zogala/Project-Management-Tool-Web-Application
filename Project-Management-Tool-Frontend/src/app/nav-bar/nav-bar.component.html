@@ -1,0 +1,23 @@
+<div class="container">
+    <h1 class="logo"> ProjectFlow </h1>
+    <div *ngIf="isLoggedIn" class="nav-bar">
+        <ul>
+            <li> Main </li>
+            <li> My Tickets </li>
+            <li> My Projects </li>
+            <li> Organization </li>
+        </ul>
+    </div>
+    <div *ngIf="isLoggedIn" class="right-nav-bar">
+        <ul>
+            <li> Profile </li>
+            <li> Setting </li>
+        </ul>
+    </div>
+    <div *ngIf="!isLoggedIn" class="right-nav-bar">
+        <ul>
+            <li> Sign Up </li>
+            <li> Login </li>
+        </ul>
+    </div>
+</div>
