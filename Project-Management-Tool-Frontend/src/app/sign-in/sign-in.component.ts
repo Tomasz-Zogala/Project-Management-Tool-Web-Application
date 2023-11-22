@@ -7,7 +7,7 @@ import {FormsModule, NgForm } from "@angular/forms";
   standalone: true,
     imports: [CommonModule, FormsModule ],
   templateUrl: './sign-in.component.html',
-  styleUrl: './sign-in.component.css'
+  styleUrl: './sign-in.component.scss'
 })
 export class SignInComponent {
   submited : boolean = false;

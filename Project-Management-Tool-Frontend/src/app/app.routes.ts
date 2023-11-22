@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import {TitlePageComponent} from "./title-page/title-page.component";
-import {NavBarComponent} from "./nav-bar/nav-bar.component";
 import {SignInComponent} from "./sign-in/sign-in.component";
 import {SignUpComponent} from "./sign-up/sign-up.component";
 import {ProjectsComponent} from "./projects/projects.component";

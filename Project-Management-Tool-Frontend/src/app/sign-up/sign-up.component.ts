@@ -7,7 +7,7 @@ import { FormsModule, NgForm } from "@angular/forms";
   standalone: true,
     imports: [CommonModule, FormsModule],
   templateUrl: './sign-up.component.html',
-  styleUrl: './sign-up.component.css'
+  styleUrl: './sign-up.component.scss'
 })
 export class SignUpComponent {
 

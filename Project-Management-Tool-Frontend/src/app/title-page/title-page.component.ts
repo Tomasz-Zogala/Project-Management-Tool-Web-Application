@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './title-page.component.html',
-  styleUrl: './title-page.component.css'
+  styleUrl: './title-page.component.scss'
 })
 export class TitlePageComponent {
 

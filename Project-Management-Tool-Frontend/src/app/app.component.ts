@@ -11,7 +11,7 @@ import { SignUpComponent } from "./sign-up/sign-up.component";
   standalone: true,
   imports: [CommonModule, RouterOutlet, NavBarComponent, SignInComponent, TitlePageComponent, SignUpComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
 }

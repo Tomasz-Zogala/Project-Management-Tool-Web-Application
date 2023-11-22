@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.css'
+  styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
   projects: Project[] = [project1, project2, project3, project4, project5, project6];
