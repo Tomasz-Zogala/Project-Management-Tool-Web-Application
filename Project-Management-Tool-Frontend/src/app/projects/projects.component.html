@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="project" *ngFor="let project of projects">
+    <div>
+      <h2>{{ project.projectName }}</h2>
+      <p>Description: {{ project.projectDescription }}</p>
+      <p>Team: {{ project.projectTeam.join(', ') }}</p>
+      <p>Priority: {{ getPriorityName(project.projectPriority) }}</p>
+      <p>Status: {{ getStatusName(project.projectStatus) }}</p>
+      <p>Tasks: {{ project.projectTasks.join(', ') }}</p>
+    </div>
+  </div>
+</div>

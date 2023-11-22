@@ -3,11 +3,12 @@ import {TitlePageComponent} from "./title-page/title-page.component";
 import {NavBarComponent} from "./nav-bar/nav-bar.component";
 import {SignInComponent} from "./sign-in/sign-in.component";
 import {SignUpComponent} from "./sign-up/sign-up.component";
+import {ProjectsComponent} from "./projects/projects.component";
 
 export const routes: Routes = [
   { path: '', component: TitlePageComponent },
-  // { path: 'tickets', component: TicketComponent },
-  // { path: 'projects', component: ProjectComponent },
+  // { path: 'tickets', component: TicketsComponent },
+  { path: 'projects', component: ProjectsComponent },
   // { path: 'organization', component: OrganizationComponent },
   // { path: 'profile', component: ProfileComponent },
   // { path: 'settings', component: SettingComponent },
