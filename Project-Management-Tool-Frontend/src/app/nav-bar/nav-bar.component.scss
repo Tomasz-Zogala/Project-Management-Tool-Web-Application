@@ -1,14 +1,14 @@
-$color_1: #ecf0f1;
-$color_2: #3498db;
-$background-color_1: #2c3e50;
+$mainBrightColor: #ecf0f1;
+$hoverColor: #3498db;
+$mainDarkColor: #2c3e50;
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 20px 12px 20px;
-  background-color: $background-color_1;
-  color: $color_1;
+  background-color: $mainDarkColor;
+  color: $mainBrightColor;
   position: sticky;
   top: 0;
 }
@@ -18,10 +18,10 @@ $background-color_1: #2c3e50;
   a {
     text-decoration: none;
     &:visited {
-      color: $color_1;
+      color: $mainBrightColor;
     }
     &:hover {
-      color: $color_2;
+      color: $hoverColor;
     }
   }
 }
@@ -47,10 +47,10 @@ $background-color_1: #2c3e50;
   a {
     text-decoration: none;
     &:visited {
-      color: $color_1;
+      color: $mainBrightColor;
     }
     &:hover {
-      color: $color_2;
+      color: $hoverColor;
     }
   }
 }
@@ -71,10 +71,10 @@ $background-color_1: #2c3e50;
   a {
     text-decoration: none;
     &:visited {
-      color: $color_1;
+      color: $mainBrightColor;
     }
     &:hover {
-      color: $color_2;
+      color: $hoverColor;
     }
   }
 }

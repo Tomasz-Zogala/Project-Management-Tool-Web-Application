@@ -1,8 +1,7 @@
-$color_1: #ecf0f1;
-$color_2: #555;
-$font-family_1: "Arial Black";
-$background-color_1: #41b045;
-$background-color_2: #ecf0f1;
+$color_1: #43b647;
+$mainBrightColor: #ecf0f1;
+$mainDarkColor: #2c3e50;
+$main-font-family: "Arial Black";
 
 .container {
   display: flex;
@@ -35,21 +34,21 @@ input {
   box-sizing: border-box;
   border: none;
   border-radius: 4px;
-  font-family: $font-family_1;
+  font-family: $main-font-family;
 }
 button {
   width: 100%;
-  background-color: $background-color_1;
-  color: $color_1;
+  background-color: $color_1;
+  color: $mainBrightColor;
   padding: 4px 15px;
   border: none;
   border-radius: 150px;
   cursor: pointer;
-  font-family: $font-family_1;
+  font-family: $main-font-family;
   font-size: 18px;
   &:disabled {
-    background-color: $background-color_2;
-    color: $color_2;
+    background-color: $mainBrightColor;
+    color: $mainDarkColor;
     cursor: not-allowed;
   }
 }
