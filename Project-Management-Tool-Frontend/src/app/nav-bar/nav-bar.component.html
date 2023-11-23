@@ -1,20 +1,21 @@
 <div class="container">
     <h1 class="logo"> <a routerLink="/"> ProjectFlow </a> </h1>
-    <div *ngIf="isLoggedIn" class="nav-bar">
+    <div *ngIf="this.authService.isLoggedIn" class="nav-bar">
         <ul>
-          <li><a routerLink="/"> Main </a></li>
           <li><a routerLink="/tickets"> Tickets </a></li>
           <li><a routerLink="/projects"> Projects </a></li>
+          <li><a routerLink="/notifications"> Notifications </a></li>
           <li><a routerLink="/organization"> Organization </a></li>
-        </ul>
-    </div>
-    <div *ngIf="isLoggedIn" class="right-nav-bar">
-        <ul>
           <li><a routerLink="/profile"> Profile </a></li>
-          <li><a routerLink="/settings"> Setting </a></li>
         </ul>
     </div>
-    <div *ngIf="!isLoggedIn" class="right-nav-bar">
+    <div *ngIf="this.authService.isLoggedIn" class="right-nav-bar">
+        <ul>
+          <li><a routerLink="/settings"> Setting </a></li>
+          <li><a routerLink="/" (click)="logOut()"> LogOut </a></li>
+        </ul>
+    </div>
+    <div *ngIf="!this.authService.isLoggedIn" class="right-nav-bar">
         <ul>
           <li><a routerLink="/signup"> Sign Up </a></li>
           <li><a routerLink="/signin"> Sign In </a></li>

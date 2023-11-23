@@ -30,5 +30,5 @@ interface Project {
 //   projectTeam: User[];
 //   projectPriority: ProjectPriority;
 //   projectStatus: ProjectStatus;
-//   projectTasks: Task[];
+//   projectTasks: Ticket[];
 // }

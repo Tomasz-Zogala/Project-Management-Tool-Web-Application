@@ -11,10 +11,11 @@ $mainDarkColor: #2c3e50;
   color: $mainBrightColor;
   position: sticky;
   top: 0;
+  border: 1px solid #4c5565;
 }
 .logo {
   margin: 0;
-  font-size: 30px;
+  font-size: 32px;
   a {
     text-decoration: none;
     &:visited {

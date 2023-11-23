@@ -1,1 +1,11 @@
-<p>tickets works!</p>
+<div class="container">
+  <div class="ticket" *ngFor="let ticket of tickets">
+    <h2>{{ ticket.ticketName }}</h2>
+    <p>Description: {{ ticket.ticketDescription }}</p>
+    <p>Team: {{ getPriorityName(ticket.ticketPriority) }}</p>
+    <p>Priority: {{ getStatusName(ticket.ticketStatus) }}</p>
+    <div class="progress-bar" [ngStyle]="{'width.%': ticket.ticketProgress}">
+      <P> Progress </P>
+    </div>
+  </div>
+</div>
