@@ -5,9 +5,9 @@ import { CommonModule } from '@angular/common';
   selector: 'app-organization',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './organization.component.html',
-  styleUrl: './organization.component.scss'
+  templateUrl: './company.component.html',
+  styleUrl: './company.component.scss'
 })
-export class OrganizationComponent {
+export class CompanyComponent {
 
 }

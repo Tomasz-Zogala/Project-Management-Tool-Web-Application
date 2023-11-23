@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="task" *ngFor="let task of tasks">
+    <h2>{{ task.taskName }}</h2>
+    <p>Description: {{ task.taskDescription }}</p>
+
+    <div [ngStyle]="{'color': getColorForPriority(task.taskPriority)}">
+      <p>Priority: {{ getPriorityName(task.taskPriority) }}</p>
+    </div>
+
+    <p>Status: {{ getStatusName(task.taskStatus) }}</p>
+    <div *ngIf="task.taskProgress != 0" class="progress-bar" [ngStyle]="{'width.%': task.taskProgress}"> Progress </div>
+    <div *ngIf="task.taskProgress == 0" class="not-started-progress-bar"> Not Started </div>
+  </div>
+</div>
