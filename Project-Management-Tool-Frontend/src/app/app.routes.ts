@@ -8,6 +8,7 @@ import {ProfileComponent} from "./profile/profile.component";
 import {SettingsComponent} from "./settings/settings.component";
 import {TasksComponent} from "./tasks/tasks.component";
 import {NotificationsComponent} from "./notifications/notifications.component";
+import {PageErrorComponent} from "./page-error/page-error.component";
 
 export const routes: Routes = [
   { path: '', component: TitlePageComponent },
@@ -18,5 +19,6 @@ export const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'signup', component: SignUpComponent },
-  { path: 'signin', component: SignInComponent }
+  { path: 'signin', component: SignInComponent },
+  { path: '**', component: PageErrorComponent },
 ];
