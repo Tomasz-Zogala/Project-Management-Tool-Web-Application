@@ -5,11 +5,11 @@
       <p>Description: {{ project.projectDescription }}</p>
       <p>Team: {{ project.projectTeam.join(', ') }}</p>
 
-      <div [ngStyle]="{'color': getColorForPriority(project.projectPriority)}">
-        <p>Priority: {{ getPriorityName(project.projectPriority) }}</p>
+      <div [ngStyle]="{'color': this.projectService.getColorForPriority(project.projectPriority)}">
+        <p>Priority: {{ this.projectService.getPriorityName(project.projectPriority) }}</p>
       </div>
 
-      <p>Status: {{ getStatusName(project.projectStatus) }}</p>
+      <p>Status: {{ this.projectService.getStatusName(project.projectStatus) }}</p>
       <p>Tasks: {{ project.projectTasks.join(', ') }}</p>
 
       <div *ngIf="project.projectProgress != 0" class="progress-bar" [ngStyle]="{'width.%': project.projectProgress}"> Progress </div>

@@ -3,11 +3,11 @@
     <h2>{{ task.taskName }}</h2>
     <p>Description: {{ task.taskDescription }}</p>
 
-    <div [ngStyle]="{'color': getColorForPriority(task.taskPriority)}">
-      <p>Priority: {{ getPriorityName(task.taskPriority) }}</p>
+    <div [ngStyle]="{'color': this.taskDataService.getColorForPriority(task.taskPriority)}">
+      <p>Priority: {{ this.taskDataService.getPriorityName(task.taskPriority) }}</p>
     </div>
 
-    <p>Status: {{ getStatusName(task.taskStatus) }}</p>
+    <p>Status: {{ this.taskDataService.getStatusName(task.taskStatus) }}</p>
     <div *ngIf="task.taskProgress != 0" class="progress-bar" [ngStyle]="{'width.%': task.taskProgress}"> Progress </div>
     <div *ngIf="task.taskProgress == 0" class="not-started-progress-bar"> Not Started </div>
   </div>
