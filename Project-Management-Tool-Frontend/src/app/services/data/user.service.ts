@@ -73,12 +73,12 @@ const user2: User = {
 const user3: User = {
   userId: 3,
   companyId: 1111,
-  firstName: "Admin",
-  lastName: "User",
-  email: "admin.user@example.com",
+  firstName: "Joshua",
+  lastName: "Jenkins",
+  email: "joshua.jenkins@example.com",
   phoneNumber: 555666777,
   dayOfBirth: new Date(1980, 2, 10),
-  password: "adminPassword",
+  password: "password123",
   role: Role.ProjectManager,
   workExperience: WorkExperience.Intern,
 };

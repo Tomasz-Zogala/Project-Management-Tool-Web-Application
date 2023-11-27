@@ -1,6 +1,7 @@
 <div class="container">
   <div class="company" *ngFor="let company of companies">
-    <h2> {{ company.name }} </h2>
+    <h2 class="company-title"> {{ company.name }} </h2>
+    <p class="company-owner"> {{ company.ceoName }} </p>
     <div *ngFor="let user of users">
       <div class="users" *ngIf="user.companyId == company.companyId">
 

@@ -2,11 +2,11 @@
     <h1 class="logo"> <a routerLink="/"> ProjectFlow </a> </h1>
     <div *ngIf="this.authService.isLoggedIn" class="nav-bar">
         <ul>
-          <li><a routerLink="/tickets"> Tickets </a></li>
+          <li><a routerLink="/tickets"> Tasks </a></li>
           <li><a routerLink="/projects"> Projects </a></li>
-          <li><a routerLink="/notifications"> Notifications </a></li>
+<!--          <li><a routerLink="/notifications"> Notifications </a></li>-->
           <li><a routerLink="/company"> Company </a></li>
-          <li><a routerLink="/profile"> Profile </a></li>
+<!--          <li><a routerLink="/profile"> Profile </a></li>-->
         </ul>
     </div>
     <div *ngIf="this.authService.isLoggedIn" class="right-nav-bar">
