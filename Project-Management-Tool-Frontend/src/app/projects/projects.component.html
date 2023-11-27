@@ -1,19 +1,24 @@
 <div class="container">
   <div class="project" *ngFor="let project of projects">
     <div>
-      <h2>{{ project.projectName }}</h2>
-      <p>Description: {{ project.projectDescription }}</p>
-      <p>Team: {{ project.projectTeam.join(', ') }}</p>
 
-      <div [ngStyle]="{'color': this.projectService.getColorForPriority(project.projectPriority)}">
-        <p>Priority: {{ this.projectService.getPriorityName(project.projectPriority) }}</p>
+      <h2>{{ project.name }}</h2>
+
+      <p>Description: {{ project.description }}</p>
+
+      <p>Start Date: {{ project.startDate.getDate() }}.{{ project.startDate.getMonth() }}.{{ project.startDate.getFullYear() }}</p>
+
+      <p>End Date: {{ project.endDate.getDate() }}.{{ project.endDate.getMonth() }}.{{ project.endDate.getFullYear() }}</p>
+
+      <div [ngStyle]="{'color': this.projectService.getColorForPriority(project.priority)}">
+        <p>Priority: {{ this.projectService.getPriorityName(project.priority) }}</p>
       </div>
 
-      <p>Status: {{ this.projectService.getStatusName(project.projectStatus) }}</p>
-      <p>Tasks: {{ project.projectTasks.join(', ') }}</p>
+      <p>Status: {{ this.projectService.getStatusName(project.status) }}</p>
 
-      <div *ngIf="project.projectProgress != 0" class="progress-bar" [ngStyle]="{'width.%': project.projectProgress}"> Progress </div>
-      <div *ngIf="project.projectProgress == 0" class="not-started-progress-bar"> Not Started </div>
+      <div *ngIf="project.progress != 0" class="progress-bar" [ngStyle]="{'width.%': project.progress}"> Progress </div>
+      <div *ngIf="project.progress == 0" class="not-started-progress-bar"> Not Started </div>
+
     </div>
   </div>
 </div>

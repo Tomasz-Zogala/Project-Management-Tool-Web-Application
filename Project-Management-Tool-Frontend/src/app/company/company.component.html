@@ -1,3 +1,20 @@
 <div class="container">
-  <p> COMPANY </p>
+  <div class="company" *ngFor="let company of companies">
+    <h2> {{ company.name }} </h2>
+    <div *ngFor="let user of users">
+      <div class="users" *ngIf="user.companyId == company.companyId">
+
+        <h2> {{ user.firstName }} {{ user.lastName }}</h2>
+
+        <p> Email : {{ user.email }}</p>
+
+        <p> Phone: {{ user.phoneNumber }}</p>
+
+        <p> Role: {{ this.userService.getUserRole(user.role) }}</p>
+
+        <p> Work Experience: {{ this.userService.getUserWorkExperience(user.workExperience) }}</p>
+
+      </div>
+    </div>
+  </div>
 </div>

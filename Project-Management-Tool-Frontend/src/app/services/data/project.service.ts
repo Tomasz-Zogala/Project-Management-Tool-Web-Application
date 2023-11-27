@@ -19,105 +19,117 @@ export class ProjectService {
     }
   }
 
-  getStatusName(status: ProjectStatus): string {
-    return ProjectStatus[status];
+  getStatusName(status: Status): string {
+    return Status[status];
   }
 
-  getPriorityName(status: ProjectPriority): string {
-    return ProjectPriority[status];
+  getPriorityName(status: Priority): string {
+    return Priority[status];
   }
 
   constructor() { }
 }
 
-enum ProjectPriority {
+enum Priority {
   Low,
   Medium,
   High,
 }
 
-enum ProjectStatus {
+enum Status {
   NotStarted,
   InProgress,
   Completed,
   Archived,
 }
 
-interface Project {
+export interface Project {
   projectId: number;
-  projectName: string;
-  projectDescription: string;
-  projectTeam: string[];
-  projectPriority: ProjectPriority;
-  projectStatus: ProjectStatus;
-  projectTasks: string[];
-  projectProgress: number;
+  companyId: number;
+  managerId: number;
+  name: string;
+  description : string;
+  startDate : Date;
+  endDate : Date;
+  priority : Priority;
+  status : Status;
+  progress : number;
 }
-
-// Flat Data
 
 const project1: Project = {
   projectId: 1,
-  projectName: 'Project A',
-  projectDescription: 'Description for Project A',
-  projectTeam: ['Employee 1', 'Employee 2'],
-  projectPriority: ProjectPriority.High,
-  projectStatus: ProjectStatus.NotStarted,
-  projectTasks: ['Task 1', 'Task 2'],
-  projectProgress: 0
+  companyId: 101,
+  managerId: 201,
+  name: "Project One",
+  description: "Description for Project One",
+  startDate: new Date(2023, 10, 1),
+  endDate: new Date(2023, 10, 30),
+  priority: Priority.Low,
+  status: Status.NotStarted,
+  progress: 0,
 };
 
 const project2: Project = {
   projectId: 2,
-  projectName: 'Project B',
-  projectDescription: 'Description for Project B',
-  projectTeam: ['Employee 3', 'Employee 4'],
-  projectPriority: ProjectPriority.Medium,
-  projectStatus: ProjectStatus.InProgress,
-  projectTasks: ['Task 3', 'Task 4'],
-  projectProgress: 75
+  companyId: 102,
+  managerId: 202,
+  name: "Project Two",
+  description: "Description for Project Two",
+  startDate: new Date(2023, 11, 1),
+  endDate: new Date(2023, 11, 31),
+  priority: Priority.Medium,
+  status: Status.InProgress,
+  progress: 50,
 };
 
 const project3: Project = {
   projectId: 3,
-  projectName: 'Project C',
-  projectDescription: 'Description for Project C',
-  projectTeam: ['Employee 5', 'Employee 6'],
-  projectPriority: ProjectPriority.Low,
-  projectStatus: ProjectStatus.Archived,
-  projectTasks: ['Task 5', 'Task 6'],
-  projectProgress: 100
+  companyId: 103,
+  managerId: 203,
+  name: "Project Three",
+  description: "Description for Project Three",
+  startDate: new Date(2023, 9, 15),
+  endDate: new Date(2023, 10, 15),
+  priority: Priority.High,
+  status: Status.Completed,
+  progress: 100,
 };
 
 const project4: Project = {
   projectId: 4,
-  projectName: 'Project D',
-  projectDescription: 'Description for Project D',
-  projectTeam: ['Employee 7', 'Employee 8'],
-  projectPriority: ProjectPriority.High,
-  projectStatus: ProjectStatus.InProgress,
-  projectTasks: ['Task 7', 'Task 8'],
-  projectProgress: 25
+  companyId: 104,
+  managerId: 204,
+  name: "Project Four",
+  description: "Description for Project Four",
+  startDate: new Date(2023, 11, 10),
+  endDate: new Date(2023, 11, 20),
+  priority: Priority.Low,
+  status: Status.InProgress,
+  progress: 25,
 };
 
 const project5: Project = {
   projectId: 5,
-  projectName: 'Project E',
-  projectDescription: 'Description for Project E',
-  projectTeam: ['Employee 9', 'Employee 10'],
-  projectPriority: ProjectPriority.Medium,
-  projectStatus: ProjectStatus.Completed,
-  projectTasks: ['Task 9', 'Task 10'],
-  projectProgress: 100
+  companyId: 105,
+  managerId: 205,
+  name: "Project Five",
+  description: "Description for Project Five",
+  startDate: new Date(2023, 9, 1),
+  endDate: new Date(2023, 9, 31),
+  priority: Priority.Medium,
+  status: Status.NotStarted,
+  progress: 0,
 };
 
 const project6: Project = {
   projectId: 6,
-  projectName: 'Project F',
-  projectDescription: 'Description for Project F',
-  projectTeam: ['Employee 11', 'Employee 12'],
-  projectPriority: ProjectPriority.Low,
-  projectStatus: ProjectStatus.Archived,
-  projectTasks: ['Task 11', 'Task 12'],
-  projectProgress: 100
+  companyId: 106,
+  managerId: 206,
+  name: "Project Six",
+  description: "Description for Project Six",
+  startDate: new Date(2023, 10, 5),
+  endDate: new Date(2023, 11, 5),
+  priority: Priority.High,
+  status: Status.Archived,
+  progress: 100,
 };

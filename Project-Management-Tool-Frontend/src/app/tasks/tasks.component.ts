@@ -11,8 +11,8 @@ import { TaskService } from "../services/data/task.service";
 })
 export class TasksComponent {
 
-  tasks = this.taskDataService.tasks;
+  tasks = this.taskService.tasks;
 
-  constructor(public taskDataService : TaskService) {
+  constructor(public taskService : TaskService) {
   }
 }
