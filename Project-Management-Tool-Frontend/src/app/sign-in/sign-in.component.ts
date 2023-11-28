@@ -16,8 +16,8 @@ export class SignInComponent {
   signInFormValue: any;
 
   constructor(public authService: AuthService, private router: Router) {}
-  signIn(signInForm : any) {
+  signIn(signInForm : NgForm) {
     this.signInFormValue = signInForm.value;
-    this.authService.signIn(signInForm.value.username, signInForm.value.password);
+    this.authService.signIn(signInForm.value.email, signInForm.value.password);
   }
 }

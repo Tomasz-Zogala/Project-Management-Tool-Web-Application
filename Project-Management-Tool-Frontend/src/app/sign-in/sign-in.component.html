@@ -6,8 +6,8 @@
 
         <form #signInForm="ngForm" (ngSubmit)="signIn(signInForm)">
             <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" ngModel required>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" ngModel required>
             </div>
 
             <div class="form-group">
@@ -19,10 +19,6 @@
         </form>
     </div>
 </div>
-
-<!--&lt;!&ndash; Testing HTML blocks &ndash;&gt;-->
-
-<!--<p class="container" *ngIf="submited"> TEST  {{ user.username }} {{ user.password }} TEST</p>-->
 
 <!--<p class="container">-->
 <!--    touched: {{ signInForm.touched }} <br>-->

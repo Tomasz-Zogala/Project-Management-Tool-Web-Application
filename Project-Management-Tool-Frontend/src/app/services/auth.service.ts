@@ -1,12 +1,14 @@
-import { Injectable } from '@angular/core';
-import { UserService } from "./data/user.service";
+import {Injectable} from '@angular/core';
+import {User, UserService} from "./data/user.service";
 import { Router } from "@angular/router";
+import {NgForm} from "@angular/forms";
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   public isLoggedIn : boolean = false;
+  public loggedUser : User = this.userService.blankUser;
 
   constructor(private userService : UserService, private router : Router) {
   }
@@ -15,16 +17,14 @@ export class AuthService {
 
     if (foundUser && foundUser.password === password) {
       this.isLoggedIn = true;
+      this.loggedUser = foundUser;
       console.log('Sign in successful');
       this.router.navigate(['/']);
     } else {
       this.isLoggedIn = false;
+      alert('Invalid email or password. Please try again.');
       console.log('Sign in failed');
     }
-  }
-
-  signUp() {
-    this.isLoggedIn = true;
   }
 
   logOut() {

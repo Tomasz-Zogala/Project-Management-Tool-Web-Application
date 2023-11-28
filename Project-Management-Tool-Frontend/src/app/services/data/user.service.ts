@@ -1,39 +1,56 @@
 import { Injectable } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
+  constructor(private router : Router) {
+  }
+
   findUserByEmail(email: string): User | undefined {
     return this.users.find(user => user.email === email);
   }
 
+  addUserToDatabase(user : User) {
+    this.router.navigate(['/signin']);
+    this.users.push(user);
+  }
+
+  getMinimalPossibleUserId(): number {
+    const maxUserId = Math.max(...this.users.map(user => user.userId), -1);
+    return maxUserId + 1;
+  }
+
   users: User[] = [user1, user2, user3, user4, user5, user6, user7, user8, user9];
 
-  getUserRole(role: Role): string {
-    return Role[role];
-  }
-
-  getUserWorkExperience(workExperience: WorkExperience): string {
-    return WorkExperience[workExperience];
-  }
-
-  constructor() { }
+  blankUser : User = {
+    userId: 0,
+    companyId: 0,
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: 0,
+    dayOfBirth: new Date(),
+    password: '',
+    role: Role.Developer,
+    workExperience: WorkExperience.Intern
+  };
 }
 
-enum Role {
-  Developer,
-  ProjectManager,
-  Manager,
-  Other,
+export enum Role {
+  Developer = 'Developer',
+  ProjectManager = 'Project Manager',
+  Manager = 'Manager',
+  Other = 'Other',
 }
 
-enum WorkExperience {
-  Intern,
-  Junior,
-  Mid,
-  Senior,
+export enum WorkExperience {
+  Intern = 'Intern',
+  Junior = 'Junior',
+  Mid = 'Mid',
+  Senior = 'Senior',
 }
 
 export interface User {
