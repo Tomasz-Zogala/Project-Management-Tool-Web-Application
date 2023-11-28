@@ -12,10 +12,12 @@ import {Router, RouterLink} from "@angular/router";
   styleUrl: './sign-in.component.scss'
 })
 export class SignInComponent {
+
+  signInFormValue: any;
+
   constructor(public authService: AuthService, private router: Router) {}
-  // TODO
-  signIn(signInForm : any): void {
-    this.authService.logIn();
-    this.router.navigate(['/']);
+  signIn(signInForm : any) {
+    this.signInFormValue = signInForm.value;
+    this.authService.signIn(signInForm.value.username, signInForm.value.password);
   }
 }

@@ -4,6 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
+
+  findUserByEmail(email: string): User | undefined {
+    return this.users.find(user => user.email === email);
+  }
+
   users: User[] = [user1, user2, user3, user4, user5, user6, user7, user8, user9];
 
   getUserRole(role: Role): string {
@@ -104,7 +109,7 @@ const user5: User = {
   email: "bob.miller@example.com",
   phoneNumber: 444555666,
   dayOfBirth: new Date(1988, 11, 5),
-  password: "strongPassword456",
+  password: "pass123",
   role: Role.Developer,
   workExperience: WorkExperience.Senior,
 };

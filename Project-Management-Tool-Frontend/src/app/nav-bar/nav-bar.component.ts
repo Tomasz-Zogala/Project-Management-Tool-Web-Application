@@ -16,8 +16,4 @@ export class NavBarComponent {
   logOut(): void {
     this.authService.logOut();
   }
-
-  signIn(): void {
-    this.authService.logIn();
-  }
 }
