@@ -11,7 +11,6 @@ import { AuthService } from "../services/auth.service";
   styleUrl: './nav-bar.component.scss'
 })
 export class NavBarComponent {
-  // Is it a Good Practice? (public in Constructor)
   constructor(public authService: AuthService) {}
   logOut(): void {
     this.authService.logOut();
