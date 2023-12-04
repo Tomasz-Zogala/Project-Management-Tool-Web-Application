@@ -5,13 +5,8 @@
     <form #userForm="ngForm" (ngSubmit)="signUp(userForm)">
 
       <div class="form-group">
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" [(ngModel)]="user.firstName" required>
-      </div>
-
-      <div class="form-group">
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" [(ngModel)]="user.lastName" required>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="user.name" required>
       </div>
 
       <div class="form-group">
@@ -20,32 +15,8 @@
       </div>
 
       <div class="form-group">
-        <label for="phoneNumber">Phone Number:</label>
-        <input type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="user.phoneNumber" required>
-      </div>
-
-      <div class="form-group">
-        <label for="dayOfBirth">Date of Birth:</label>
-        <input type="date" id="dayOfBirth" name="dayOfBirth" [(ngModel)]="user.dayOfBirth" required>
-      </div>
-
-      <div class="form-group">
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" [(ngModel)]="user.password" required>
-      </div>
-
-      <div class="form-group">
-        <label for="role">Role:</label>
-        <select id="role" name="role" [(ngModel)]="user.role" required>
-          <option *ngFor="let role of roles" [ngValue]="role">{{ role }}</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="workExperience">Work Experience:</label>
-        <select id="workExperience" name="workExperience" [(ngModel)]="user.workExperience" required>
-          <option *ngFor="let experience of workExperiences" [ngValue]="experience">{{ experience }}</option>
-        </select>
       </div>
 
       <button type="submit" [disabled]="userForm.invalid">Submit</button>

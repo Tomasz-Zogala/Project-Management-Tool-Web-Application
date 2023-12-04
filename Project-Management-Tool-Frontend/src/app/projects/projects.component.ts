@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CommonModule, formatDate} from '@angular/common';
 import {Project} from "../models/project.model";
 import {ProjectService} from "../services/project.service";
@@ -11,7 +11,7 @@ import {ProjectService} from "../services/project.service";
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
 
   constructor(private projectService: ProjectService) {}

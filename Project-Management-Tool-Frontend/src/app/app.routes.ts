@@ -7,14 +7,14 @@ import {CompanyComponent} from "./company/company.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {SettingsComponent} from "./settings/settings.component";
 import {TasksComponent} from "./tasks/tasks.component";
-import {NotificationsComponent} from "./notifications/notifications.component";
 import {PageErrorComponent} from "./page-error/page-error.component";
+import {UsersComponent} from "./users/users.component";
 
 export const routes: Routes = [
   { path: '', component: TitlePageComponent },
-  { path: 'tickets', component: TasksComponent },
+  { path: 'tasks', component: TasksComponent },
   { path: 'projects', component: ProjectsComponent },
-  { path: 'notifications', component: NotificationsComponent },
+  { path: 'users', component: UsersComponent },
   { path: 'company', component: CompanyComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'settings', component: SettingsComponent },
