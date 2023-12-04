@@ -33,10 +33,15 @@ public class ProjectService {
 
         if (projectOptional.isPresent()) {
             Project existingProject = projectOptional.get();
+            existingProject.setCompanyId(projectDetails.getCompanyId());
+            existingProject.setManagerId(projectDetails.getManagerId());
             existingProject.setName(projectDetails.getName());
             existingProject.setDescription(projectDetails.getDescription());
             existingProject.setStartDate(projectDetails.getStartDate());
             existingProject.setEndDate(projectDetails.getEndDate());
+            existingProject.setPriority(projectDetails.getPriority());
+            existingProject.setStatus(projectDetails.getStatus());
+            existingProject.setProgress(projectDetails.getProgress());
             return projectRepository.save(existingProject);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Task with ID " + id + " not found");

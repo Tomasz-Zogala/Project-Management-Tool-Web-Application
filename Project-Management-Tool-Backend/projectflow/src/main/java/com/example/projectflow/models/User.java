@@ -1,31 +1,62 @@
 package com.example.projectflow.models;
+import com.example.projectflow.models.enums.ExperienceEnum;
+import com.example.projectflow.models.enums.RoleEnum;
 import jakarta.persistence.*;
 
+import java.sql.Date;
+
 @Entity
-@Table(name = "testusers")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
+    private Long userId;
+    @ManyToOne
+    @JoinColumn(name = "companyId", nullable = false)
+    private Company companyId;
+    private String firstName;
+    private String lastName;
     private String email;
-
+    private String phone;
+    private Date dayOfBirth;
     private String password;
 
-    public Long getId() {
-        return id;
+    @Enumerated(EnumType.STRING)
+    private RoleEnum role;
+
+    @Enumerated(EnumType.STRING)
+    private ExperienceEnum workExperience;
+
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
-    public String getName() {
-        return name;
+    public Company getCompanyId() {
+        return companyId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCompanyId(Company companyId) {
+        this.companyId = companyId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -36,11 +67,43 @@ public class User {
         this.email = email;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Date getDayOfBirth() {
+        return dayOfBirth;
+    }
+
+    public void setDayOfBirth(Date dayOfBirth) {
+        this.dayOfBirth = dayOfBirth;
+    }
+
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public RoleEnum getRole() {
+        return role;
+    }
+
+    public void setRole(RoleEnum role) {
+        this.role = role;
+    }
+
+    public ExperienceEnum getWorkExperience() {
+        return workExperience;
+    }
+
+    public void setWorkExperience(ExperienceEnum workExperience) {
+        this.workExperience = workExperience;
     }
 }

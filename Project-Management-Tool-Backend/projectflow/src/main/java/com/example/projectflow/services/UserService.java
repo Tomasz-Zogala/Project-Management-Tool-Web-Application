@@ -32,9 +32,15 @@ public class UserService {
 
         if (userOptional.isPresent()) {
             User existingUser = userOptional.get();
-            existingUser.setName(userDetails.getName());
+            existingUser.setCompanyId(userDetails.getCompanyId());
+            existingUser.setFirstName(userDetails.getFirstName());
+            existingUser.setLastName(userDetails.getLastName());
             existingUser.setEmail(userDetails.getEmail());
+            existingUser.setPhone(userDetails.getPhone());
+            existingUser.setDayOfBirth(userDetails.getDayOfBirth());
             existingUser.setPassword(userDetails.getPassword());
+            existingUser.setRole(userDetails.getRole());
+            existingUser.setWorkExperience(userDetails.getWorkExperience());
             return userRepository.save(existingUser);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User with ID " + id + " not found");

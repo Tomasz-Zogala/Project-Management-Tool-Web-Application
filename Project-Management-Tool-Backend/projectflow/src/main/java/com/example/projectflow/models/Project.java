@@ -1,26 +1,60 @@
 package com.example.projectflow.models;
 
+import com.example.projectflow.models.enums.PriorityEnum;
+import com.example.projectflow.models.enums.StatusEnum;
 import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "testprojects")
+@Table(name = "projects")
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long projectId;
+
+    @ManyToOne
+    @JoinColumn(name = "companyId", nullable = false)
+    private Company companyId;
+
+    @ManyToOne
+    @JoinColumn(name = "managerId", nullable = false)
+    private User managerId;
 
     private String name;
     private String description;
     private Date startDate;
     private Date endDate;
 
-    public Long getId() {
-        return id;
+    @Enumerated(EnumType.STRING)
+    private PriorityEnum priority;
+
+    @Enumerated(EnumType.STRING)
+    private StatusEnum status;
+
+    private Integer progress;
+
+    public Long getProjectId() {
+        return projectId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setProjectId(Long projectId) {
+        this.projectId = projectId;
+    }
+
+    public Company getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Company companyId) {
+        this.companyId = companyId;
+    }
+
+    public User getManagerId() {
+        return managerId;
+    }
+
+    public void setManagerId(User managerId) {
+        this.managerId = managerId;
     }
 
     public String getName() {
@@ -53,5 +87,29 @@ public class Project {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public PriorityEnum getPriority() {
+        return priority;
+    }
+
+    public void setPriority(PriorityEnum priority) {
+        this.priority = priority;
+    }
+
+    public StatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEnum status) {
+        this.status = status;
+    }
+
+    public Integer getProgress() {
+        return progress;
+    }
+
+    public void setProgress(Integer progress) {
+        this.progress = progress;
     }
 }

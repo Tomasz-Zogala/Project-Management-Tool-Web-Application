@@ -3,23 +3,24 @@ package com.example.projectflow.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "testcompanies")
+@Table(name = "companies")
 public class Company {
     @Id
+    @Column(name="companyid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long companyId;
     private String name;
     private String address;
     private String email;
     private Long phone;
     private String ceo;
 
-    public Long getId() {
-        return id;
+    public Long getCompanyId() {
+        return companyId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCompanyId(Long companyId) {
+        this.companyId = companyId;
     }
 
     public String getName() {

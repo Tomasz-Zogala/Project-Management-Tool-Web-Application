@@ -33,8 +33,16 @@ public class TaskService {
 
         if (taskOptional.isPresent()) {
             Task existingTask = taskOptional.get();
+            existingTask.setAssignedById(taskDetails.getAssignedById());
+            existingTask.setAssignedToId(taskDetails.getAssignedToId());
+            existingTask.setProjectId(taskDetails.getProjectId());
             existingTask.setName(taskDetails.getName());
             existingTask.setDescription(taskDetails.getDescription());
+            existingTask.setStartDate(taskDetails.getStartDate());
+            existingTask.setEndDate(taskDetails.getEndDate());
+            existingTask.setPriority(taskDetails.getPriority());
+            existingTask.setStatus(taskDetails.getStatus());
+            existingTask.setProgress(taskDetails.getProgress());
             return taskRepository.save(existingTask);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Task with ID " + id + " not found");
