@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {ProjectService} from "../services/data/project.service";
+import {CommonModule, formatDate} from '@angular/common';
+import {Project} from "../models/project.model";
+import {ProjectService} from "../services/project.service";
+
 
 @Component({
   selector: 'app-projects',
@@ -10,8 +12,15 @@ import {ProjectService} from "../services/data/project.service";
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
+  projects: Project[] = [];
 
-  projects = this.projectService.projects
-  constructor(public projectService : ProjectService) {
+  constructor(private projectService: ProjectService) {}
+
+  ngOnInit() {
+    this.projectService.getAllProjects().subscribe(projects => {
+      this.projects = projects;
+    });
   }
+
+  protected readonly formatDate = formatDate;
 }

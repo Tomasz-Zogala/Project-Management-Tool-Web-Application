@@ -6,18 +6,9 @@
 
       <p>Description: {{ project.description }}</p>
 
-      <p>Start Date: {{ project.startDate.getDate() }}.{{ project.startDate.getMonth() }}.{{ project.startDate.getFullYear() }}</p>
+      <p>Start Date: {{ project.startDate }}  </p>
 
-      <p>End Date: {{ project.endDate.getDate() }}.{{ project.endDate.getMonth() }}.{{ project.endDate.getFullYear() }}</p>
-
-      <div [ngStyle]="{'color': this.projectService.getColorForPriority(project.priority)}">
-        <p>Priority: {{ this.projectService.getPriorityName(project.priority) }}</p>
-      </div>
-
-      <p>Status: {{ this.projectService.getStatusName(project.status) }}</p>
-
-      <div *ngIf="project.progress != 0" class="progress-bar" [ngStyle]="{'width.%': project.progress}"> Progress </div>
-      <div *ngIf="project.progress == 0" class="not-started-progress-bar"> Not Started </div>
+      <p>End Date: {{ project.endDate }} </p>
 
     </div>
   </div>

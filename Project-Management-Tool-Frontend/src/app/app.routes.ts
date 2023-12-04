@@ -9,7 +9,6 @@ import {SettingsComponent} from "./settings/settings.component";
 import {TasksComponent} from "./tasks/tasks.component";
 import {NotificationsComponent} from "./notifications/notifications.component";
 import {PageErrorComponent} from "./page-error/page-error.component";
-import {RealDatabaseComponent} from "./real-database/real-database.component";
 
 export const routes: Routes = [
   { path: '', component: TitlePageComponent },
@@ -21,6 +20,5 @@ export const routes: Routes = [
   { path: 'settings', component: SettingsComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'signin', component: SignInComponent },
-  { path: 'real-database', component: RealDatabaseComponent },
   { path: '**', component: PageErrorComponent },
 ];
