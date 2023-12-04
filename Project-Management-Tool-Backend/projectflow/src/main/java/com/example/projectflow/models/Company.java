@@ -6,13 +6,12 @@ import jakarta.persistence.*;
 @Table(name = "companies")
 public class Company {
     @Id
-    @Column(name="companyid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long companyId;
     private String name;
     private String address;
     private String email;
-    private Long phone;
+    private String phone;
     private String ceo;
 
     public Long getCompanyId() {
@@ -47,11 +46,11 @@ public class Company {
         this.email = email;
     }
 
-    public Long getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
     public String getCeo() {
