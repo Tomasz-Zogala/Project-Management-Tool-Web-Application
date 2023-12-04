@@ -2,13 +2,5 @@
   <div class="task" *ngFor="let task of tasks">
       <h2>{{ task.name }}</h2>
       <p>Description: {{ task.description }}</p>
-      <p>Start Date: {{ task.startDate.getDate() }}.{{ task.startDate.getMonth() }}.{{ task.startDate.getFullYear() }}</p>
-      <p>End Date: {{ task.endDate.getDate() }}.{{ task.endDate.getMonth() }}.{{ task.endDate.getFullYear() }}</p>
-      <div [ngStyle]="{'color': this.taskService.getColorForPriority(task.priority)}">
-        <p>Priority: {{ this.taskService.getPriorityName(task.priority) }}</p>
-      </div>
-      <p>Status: {{ this.taskService.getStatusName(task.status) }}</p>
-<!--      <div *ngIf="task.progress != 0" class="progress-bar" [ngStyle]="{'width.%': task.progress}"> Progress </div>-->
-<!--      <div *ngIf="task.progress == 0" class="not-started-progress-bar"> Not Started </div>-->
   </div>
 </div>

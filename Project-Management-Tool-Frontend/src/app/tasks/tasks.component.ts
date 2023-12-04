@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskService } from "../services/task.service";
+import {Task} from "../models/task.model";
 
 @Component({
   selector: 'app-tickets',
@@ -9,10 +10,14 @@ import { TaskService } from "../services/task.service";
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.scss'
 })
-export class TasksComponent {
+export class TasksComponent implements OnInit {
+  tasks: Task[] = [];
 
-  tasks = this.taskService.tasks;
+  constructor(private taskService: TaskService) {}
 
-  constructor(public taskService : TaskService) {
+  ngOnInit() {
+    this.taskService.getAllTasks().subscribe(tasks => {
+      this.tasks = tasks;
+    });
   }
 }
