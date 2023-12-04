@@ -1,12 +1,23 @@
 import { Injectable } from '@angular/core';
 import {Router} from "@angular/router";
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private router : Router) {
+
+  private apiUrl = 'http://localhost:8080/api/users';
+
+  constructor(private router : Router, private http: HttpClient) {
+  }
+
+  getUsersFromApi(): Observable<User[]> {
+    return this.http.get<User[]>(this.apiUrl);
   }
 
   findUserByEmail(email: string): User | undefined {

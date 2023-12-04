@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {UserService} from "../services/data/user.service";
+import {User, UserService} from "../services/data/user.service";
 import {CompanyService} from "../services/data/company.service";
 
 @Component({
@@ -11,9 +11,19 @@ import {CompanyService} from "../services/data/company.service";
   styleUrl: './company.component.scss'
 })
 export class CompanyComponent {
-  users = this.userService.users;
+  users: User[] = [];
   companies = this.companyService.companies;
-  constructor(public companyService : CompanyService,
-              public userService : UserService) {
+
+  constructor(public companyService: CompanyService, public userService: UserService) {}
+
+  ngOnInit(): void {
+    this.userService.getUsersFromApi().subscribe(
+      (users) => {
+        this.users = users;
+      },
+      (error) => {
+        console.error('Error fetching users from API:', error);
+      }
+    );
   }
 }
