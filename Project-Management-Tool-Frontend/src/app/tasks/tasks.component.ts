@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TaskService } from "../services/data/task.service";
+import { TaskService } from "../services/task.service";
 
 @Component({
   selector: 'app-tickets',

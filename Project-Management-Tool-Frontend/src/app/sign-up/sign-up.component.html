@@ -48,13 +48,6 @@
         </select>
       </div>
 
-      <div class="form-group">
-        <label for="companyId">Company:</label>
-        <select id="companyId" name="companyId" [(ngModel)]="user.companyId" required>
-          <option *ngFor="let company of this.companyService.companies" [ngValue]="company.companyId">{{ company.name }}</option>
-        </select>
-      </div>
-
       <button type="submit" [disabled]="userForm.invalid">Submit</button>
     </form>
   </div>

@@ -34,6 +34,7 @@ public class UserService {
             User existingUser = userOptional.get();
             existingUser.setName(userDetails.getName());
             existingUser.setEmail(userDetails.getEmail());
+            existingUser.setPassword(userDetails.getPassword());
             return userRepository.save(existingUser);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User with ID " + id + " not found");

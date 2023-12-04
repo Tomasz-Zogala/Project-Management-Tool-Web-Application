@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from "@angular/forms";
-import {UserService, User, Role, WorkExperience} from "../services/data/user.service";
-import {CompanyService} from "../services/data/company.service";
+import {UserService, User, Role, WorkExperience} from "../services/user.service";
+import {CompanyService} from "../services/company.service";
 
 @Component({
   selector: 'app-sign-up',

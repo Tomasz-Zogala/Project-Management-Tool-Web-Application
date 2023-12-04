@@ -1,21 +1,19 @@
 <div class="container">
   <div class="company" *ngFor="let company of companies">
-    <h2 class="company-title"> {{ company.name }} </h2>
-    <p class="company-owner"> {{ company.ceoName }} </p>
-    <div *ngFor="let user of users">
-      <div class="users" *ngIf="user.companyId == company.companyId">
+    <div>
 
-        <h2> {{ user.firstName }} {{ user.lastName }}</h2>
+      <h2>{{ company.name }}</h2>
 
-        <p> Email : {{ user.email }}</p>
+      <p>Description: {{ company.name }}</p>
 
-        <p> Phone: {{ user.phoneNumber }}</p>
+      <p>Address: {{ company.address }}  </p>
 
-        <p> Role: {{ user.role }}</p>
+      <p>Email: {{ company.email }} </p>
 
-        <p> Work Experience: {{ user.workExperience }}</p>
+      <p>Phone Number: {{ company.phone }} </p>
 
-      </div>
+      <p>CEO: {{ company.ceo }} </p>
+
     </div>
   </div>
 </div>

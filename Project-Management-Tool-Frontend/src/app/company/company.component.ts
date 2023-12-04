@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {User, UserService} from "../services/data/user.service";
-import {CompanyService} from "../services/data/company.service";
+import {CompanyService} from "../services/company.service";
+import {Company} from "../models/company.model";
 
 @Component({
   selector: 'app-organization',
@@ -10,20 +10,14 @@ import {CompanyService} from "../services/data/company.service";
   templateUrl: './company.component.html',
   styleUrl: './company.component.scss'
 })
-export class CompanyComponent {
-  users: User[] = [];
-  companies = this.companyService.companies;
+export class CompanyComponent implements OnInit{
+  companies: Company[] = [];
 
-  constructor(public companyService: CompanyService, public userService: UserService) {}
+  constructor(private companyService: CompanyService) {}
 
-  ngOnInit(): void {
-    this.userService.getUsersFromApi().subscribe(
-      (users) => {
-        this.users = users;
-      },
-      (error) => {
-        console.error('Error fetching users from API:', error);
-      }
-    );
+  ngOnInit() {
+    this.companyService.getAllCompanies().subscribe(companies => {
+      this.companies = companies;
+    });
   }
 }
