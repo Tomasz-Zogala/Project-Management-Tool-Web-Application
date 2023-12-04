@@ -1,14 +1,15 @@
 package com.example.projectflow.models;
+
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "testusers")
-public class User {
+@Table(name = "testtasks")
+public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String email;
+    private String description;
 
     public Long getId() {
         return id;
@@ -26,11 +27,11 @@ public class User {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDescription() {
+        return description;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

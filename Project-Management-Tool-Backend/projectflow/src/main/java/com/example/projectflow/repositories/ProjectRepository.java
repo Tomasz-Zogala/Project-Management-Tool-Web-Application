@@ -1,9 +1,9 @@
 package com.example.projectflow.repositories;
 
-import com.example.projectflow.models.User;
+import com.example.projectflow.models.Project;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface ProjectRepository extends JpaRepository<Project, Long> {
 }
