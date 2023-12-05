@@ -13,15 +13,15 @@ public class Task {
     private Long taskId;
 
     @ManyToOne
-    @JoinColumn(name = "assignedBy_id", nullable = false)
+    @JoinColumn(name = "assignedby_id", nullable = false)
     private User assignedById;
 
     @ManyToOne
-    @JoinColumn(name = "assignedTo_id", nullable = false)
+    @JoinColumn(name = "assignedto_id", nullable = false)
     private User assignedToId;
 
     @ManyToOne
-    @JoinColumn(name = "project_id", nullable = false)
+    @JoinColumn(name = "projects_id", nullable = false)
     private Project projectId;
 
     private String name;
