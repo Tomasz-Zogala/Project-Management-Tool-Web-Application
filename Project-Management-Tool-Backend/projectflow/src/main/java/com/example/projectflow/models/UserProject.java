@@ -3,16 +3,41 @@ package com.example.projectflow.models;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "userproject")
 public class UserProject {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userProjectId;
 
-    @EmbeddedId
-    private UserProjectId id;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User userId;
 
-    public UserProjectId getId() {
-        return id;
+    @ManyToOne
+    @JoinColumn(name = "project_id", nullable = false)
+    private Project projectId;
+
+    public Long getUserProjectId() {
+        return userProjectId;
     }
 
-    public void setId(UserProjectId id) {
-        this.id = id;
+    public void setUserProjectId(Long userProjectId) {
+        this.userProjectId = userProjectId;
+    }
+
+    public User getUserId() {
+        return userId;
+    }
+
+    public void setUserId(User userId) {
+        this.userId = userId;
+    }
+
+    public Project getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Project projectId) {
+        this.projectId = projectId;
     }
 }

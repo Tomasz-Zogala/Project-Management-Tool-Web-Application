@@ -40,7 +40,7 @@ public class UserService {
             existingUser.setDayOfBirth(userDetails.getDayOfBirth());
             existingUser.setPassword(userDetails.getPassword());
             existingUser.setRole(userDetails.getRole());
-            existingUser.setWorkExperience(userDetails.getWorkExperience());
+            existingUser.setExperience(userDetails.getExperience());
             return userRepository.save(existingUser);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User with ID " + id + " not found");

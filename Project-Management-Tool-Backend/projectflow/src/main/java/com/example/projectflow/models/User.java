@@ -1,6 +1,5 @@
 package com.example.projectflow.models;
-import com.example.projectflow.models.enums.ExperienceEnum;
-import com.example.projectflow.models.enums.RoleEnum;
+
 import jakarta.persistence.*;
 
 import java.sql.Date;
@@ -12,20 +11,22 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
     @ManyToOne
-    @JoinColumn(name = "companyId", nullable = false)
+    @JoinColumn(name = "company_id", nullable = false)
     private Company companyId;
+    @Column(name = "firstname")
     private String firstName;
+    @Column(name = "lastname")
     private String lastName;
     private String email;
+
     private String phone;
+    @Column(name = "dayofbirth")
     private Date dayOfBirth;
     private String password;
 
-    @Enumerated(EnumType.STRING)
-    private RoleEnum role;
+    private String role;
 
-    @Enumerated(EnumType.STRING)
-    private ExperienceEnum workExperience;
+    private String experience;
 
     public Long getUserId() {
         return userId;
@@ -91,19 +92,19 @@ public class User {
         this.password = password;
     }
 
-    public RoleEnum getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(RoleEnum role) {
+    public void setRole(String role) {
         this.role = role;
     }
 
-    public ExperienceEnum getWorkExperience() {
-        return workExperience;
+    public String getExperience() {
+        return experience;
     }
 
-    public void setWorkExperience(ExperienceEnum workExperience) {
-        this.workExperience = workExperience;
+    public void setExperience(String experience) {
+        this.experience = experience;
     }
 }

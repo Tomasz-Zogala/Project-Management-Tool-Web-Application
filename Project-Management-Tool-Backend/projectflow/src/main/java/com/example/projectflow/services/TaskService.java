@@ -1,7 +1,6 @@
 package com.example.projectflow.services;
 
 import com.example.projectflow.models.Task;
-import com.example.projectflow.models.User;
 import com.example.projectflow.repositories.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

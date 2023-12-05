@@ -1,7 +1,5 @@
 package com.example.projectflow.models;
 
-import com.example.projectflow.models.enums.PriorityEnum;
-import com.example.projectflow.models.enums.StatusEnum;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -15,27 +13,30 @@ public class Task {
     private Long taskId;
 
     @ManyToOne
-    @JoinColumn(name = "assignedById", nullable = false)
+    @JoinColumn(name = "assignedBy_id", nullable = false)
     private User assignedById;
 
     @ManyToOne
-    @JoinColumn(name = "assignedToId", nullable = false)
+    @JoinColumn(name = "assignedTo_id", nullable = false)
     private User assignedToId;
 
     @ManyToOne
-    @JoinColumn(name = "projectId", nullable = false)
+    @JoinColumn(name = "project_id", nullable = false)
     private Project projectId;
 
     private String name;
     private String description;
+    @Column(name = "startdate")
     private Date startDate;
+
+    @Column(name = "enddate")
     private Date endDate;
 
-    @Enumerated(EnumType.STRING)
-    private PriorityEnum priority;
 
-    @Enumerated(EnumType.STRING)
-    private StatusEnum status;
+    private String priority;
+
+
+    private String status;
 
     private Integer progress;
 
@@ -103,19 +104,19 @@ public class Task {
         this.endDate = endDate;
     }
 
-    public PriorityEnum getPriority() {
+    public String getPriority() {
         return priority;
     }
 
-    public void setPriority(PriorityEnum priority) {
+    public void setPriority(String priority) {
         this.priority = priority;
     }
 
-    public StatusEnum getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
