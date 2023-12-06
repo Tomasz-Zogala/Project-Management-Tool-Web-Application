@@ -2,9 +2,13 @@
   <div class="user" *ngFor="let user of users">
     <div>
 
-      <h2>{{ user.firstName }}</h2>
+      <h1> {{ user.firstName }} {{ user.lastName }}</h1>
 
-      <p>Description: {{ user.email }}</p>
+      <p>Company: {{ user.companyId.name }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Phone Number: {{ user.phone }}</p>
+      <p>Role: {{ user.role }}</p>
+      <p>Experience: {{ user.experience }}</p>
 
     </div>
   </div>

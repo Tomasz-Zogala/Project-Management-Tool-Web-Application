@@ -1,19 +1,20 @@
 <div class="container">
   <div class="company" *ngFor="let company of companies">
-    <div>
+    <div class="company-card">
+      <div class="company-info">
 
-      <h2>{{ company.name }}</h2>
+        <h1>{{ company.name }}</h1>
 
-      <p>Description: {{ company.name }}</p>
+        <p>Description: {{ company.name }}</p>
+        <p>Address: {{ company.address }}  </p>
+        <p>Email: {{ company.email }} </p>
+        <p>Phone Number: {{ company.phone }} </p>
+        <p>CEO: {{ company.ceo }} </p>
 
-      <p>Address: {{ company.address }}  </p>
-
-      <p>Email: {{ company.email }} </p>
-
-      <p>Phone Number: {{ company.phone }} </p>
-
-      <p>CEO: {{ company.ceo }} </p>
-
+      </div>
+      <div class="company-logo">
+        <!--  LOGOS TO DO    -->
+      </div>
     </div>
   </div>
 </div>

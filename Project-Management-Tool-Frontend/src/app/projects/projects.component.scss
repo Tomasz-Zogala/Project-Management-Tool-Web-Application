@@ -1,36 +1,25 @@
-$background-color_1: #2c3e50;
-
 .container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.project {
-  background-color: $background-color_1;
-  margin: 20px 20px 20px 20px;
-  padding: 20px 20px 20px 20px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-  border: 2px #ffffff dashed;
-  border-radius: 20px;
 
-  h2 {
-    margin: 0 0 0 0;
+.project {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 16px;
+  padding: 16px;
+  width: 800px;
+
+  h1 {
+    color: #1b2631;
+    margin-top: 0;
+    margin-bottom: 14px;
   }
 
   p {
-    margin: 10px 0 10px 0;
+    color: #2c3e50;
+    margin: 4px 0;
   }
-}
-
-.progress-bar {
-  height: 20px;
-  background-color: #43b647;
-  text-align: center;
-  line-height: 20px;
-}
-
-.not-started-progress-bar {
-  height: 20px;
-  background-color: #b64343;
-  text-align: center;
-  line-height: 20px;
 }

@@ -2,13 +2,13 @@
   <div class="project" *ngFor="let project of projects">
     <div>
 
-      <h2>{{ project.name }}</h2>
+      <h1>{{ project.name }}</h1>
 
-      <p>Description: {{ project.description }}</p>
-
-      <p>Start Date: {{ project.startDate }}  </p>
-
-      <p>End Date: {{ project.endDate }} </p>
+      <p>Company: {{ project.companyId.name}}</p>
+      <p>Manager: {{ project.managerId.firstName }} {{ project.managerId.lastName }}</p>
+      <p>Description: {{ project.description }} </p>
+      <p>Priority: {{ project.priority }} </p>
+      <p>Status: {{ project.status }} </p>
 
     </div>
   </div>

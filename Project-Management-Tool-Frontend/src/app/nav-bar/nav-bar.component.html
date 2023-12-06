@@ -5,12 +5,13 @@
           <li><a routerLink="/tasks"> Tasks </a></li>
           <li><a routerLink="/projects"> Projects </a></li>
           <li><a routerLink="/users"> Users </a></li>
-          <li><a routerLink="/company"> Company </a></li>
+          <li><a routerLink="/companies"> Companies </a></li>
+<!--          <li><a routerLink="/profile"> My Profile </a> </li>-->
         </ul>
     </div>
     <div *ngIf="this.authService.isLoggedIn" class="right-nav-bar">
         <ul>
-          <li><a routerLink="/settings"> Setting </a></li>
+<!--          <li><a routerLink="/settings"> Setting </a></li>-->
           <li><a routerLink="/" (click)="logOut()"> LogOut </a></li>
         </ul>
     </div>
