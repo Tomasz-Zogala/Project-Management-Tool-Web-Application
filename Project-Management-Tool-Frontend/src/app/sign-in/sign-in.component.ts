@@ -13,7 +13,11 @@ import {AuthService} from "../services/auth.service";
 })
 export class SignInComponent {
   constructor(private authService : AuthService) {}
+
   signIn(signInForm : NgForm) {
-    this.authService.signIn();
+    this.authService.signIn(signInForm.value.email, signInForm.value.password);
+  }
+
+  logOut() {
   }
 }
