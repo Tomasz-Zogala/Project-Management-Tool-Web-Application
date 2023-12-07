@@ -7,10 +7,12 @@ import {CompanyComponent} from "./company/company.component";
 import {TasksComponent} from "./tasks/tasks.component";
 import {PageErrorComponent} from "./page-error/page-error.component";
 import {UsersComponent} from "./users/users.component";
+import {ProfileComponent} from "./profile/profile.component";
 
 export const routes: Routes = [
   { path: '', component: TitlePageComponent },
   { path: 'tasks', component: TasksComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'users', component: UsersComponent },
   { path: 'companies', component: CompanyComponent },

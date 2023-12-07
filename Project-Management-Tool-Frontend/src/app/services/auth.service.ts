@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {UserService} from "./user.service";
 import {catchError, map, of} from "rxjs";
 import {Router} from "@angular/router";
+import {User} from "../models/user.model";
 
 
 @Injectable({
@@ -10,6 +11,7 @@ import {Router} from "@angular/router";
 })
 export class AuthService {
   public isLoggedIn : boolean = false;
+  public loggedUser : User = this.userService.blankUser;
 
   constructor(private userService : UserService, private router : Router) {
   }
@@ -18,8 +20,9 @@ export class AuthService {
       map((user) => {
         if (user) {
           if (password === user.password) {
-            this.router.navigate(['/']);
+            this.loggedUser = user;
             this.isLoggedIn = true;
+            this.router.navigate(['/']);
           } else {
             console.error('Incorrect password');
           }

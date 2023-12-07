@@ -21,4 +21,36 @@ export class UserService {
     const url = `${this.apiUrl}/by-email/${email}`;
     return this.http.get<User>(url);
   }
+
+  blankUser : User = {
+    companyId: {
+      ceo: "",
+      companyId: 1,
+      email: "",
+      name: "",
+      phone: "",
+      country: "",
+      province: "",
+      city: "",
+      postalCode: "",
+      street: "",
+      houseNumber: "",
+    },
+    userId: 0,
+    dayOfBirth: new Date(),
+    email: "",
+    experience: "",
+    firstName: "",
+    lastName: "",
+    password: "",
+    phone: "",
+    role: "",
+    country: "",
+    province: "",
+    city: "",
+    postalCode: "",
+    street: "",
+    houseNumber: "",
+  }
+
 }

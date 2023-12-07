@@ -1,5 +1,14 @@
 <div class="container">
+
+  <div *ngIf="!authService.isLoggedIn">
     <h2 class="description-header"> Welcome to Our Project Management Tool </h2>
+  </div>
+
+
+  <div *ngIf="authService.isLoggedIn">
+    <h2 class="description-header"> Welcome to Our Project Management Tool <br> Hello {{ authService.loggedUser.firstName }} {{ authService.loggedUser.lastName }} </h2>
+  </div>
+
     <p class="description">
         Our Project Management Tool is a robust solution designed to help you effectively plan, execute, and
         oversee your projects. Whether you're working on a small team project or managing complex enterprise

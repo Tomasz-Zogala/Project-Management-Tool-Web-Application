@@ -14,36 +14,7 @@ import {Company} from "../models/company.model";
 })
 export class SignUpComponent {
 
-  user: User = {
-    companyId: {
-      ceo: "",
-      companyId: 1,
-      email: "",
-      name: "",
-      phone: "",
-      country: "",
-      province: "",
-      city: "",
-      postalCode: "",
-      street: "",
-      houseNumber: "",
-    },
-    userId: 0,
-    dayOfBirth: new Date(),
-    email: "",
-    experience: "",
-    firstName: "",
-    lastName: "",
-    password: "",
-    phone: "",
-    role: "",
-    country: "",
-    province: "",
-    city: "",
-    postalCode: "",
-    street: "",
-    houseNumber: "",
-  }
+  user: User = this.userService.blankUser;
 
   constructor(private userService : UserService) {}
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {AuthService} from "../services/auth.service";
 
 @Component({
   selector: 'app-title-page',
@@ -9,5 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './title-page.component.scss'
 })
 export class TitlePageComponent {
+  constructor(public authService : AuthService) {
+  }
 
 }
