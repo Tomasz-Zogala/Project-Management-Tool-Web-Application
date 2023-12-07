@@ -1,1 +1,27 @@
-<p>profile works!</p>
+<div class="container">
+  <div class="profile">
+
+    <p class="greetings">
+      Hello! {{ authService.loggedUser.firstName }} {{ authService.loggedUser.lastName }} <br>
+      Here are some information about You!
+    </p>
+
+    <p class="field">First Name: {{ authService.loggedUser.firstName }} </p>
+    <p class="field">First Last: {{ authService.loggedUser.lastName }} </p>
+    <p class="field">Company: {{ authService.loggedUser.companyId.name }}</p>
+    <p class="field">Email: {{ authService.loggedUser.email }}</p>
+    <p class="field">Phone Number: {{ authService.loggedUser.phone }}</p>
+
+
+    <p class="field">Country: {{ authService.loggedUser.country }} </p>
+    <p class="field">Province: {{ authService.loggedUser.province }} </p>
+    <p class="field">City: {{ authService.loggedUser.city }} </p>
+    <p class="field">Postal Code: {{ authService.loggedUser.postalCode }} </p>
+    <p class="field">Street: {{ authService.loggedUser.street }} </p>
+    <p class="field">House Number: {{ authService.loggedUser.houseNumber }} </p>
+
+    <p class="field">Role: {{ authService.loggedUser.role }}</p>
+    <p class="field">Experience: {{ authService.loggedUser.experience }}</p>
+
+  </div>
+</div>
