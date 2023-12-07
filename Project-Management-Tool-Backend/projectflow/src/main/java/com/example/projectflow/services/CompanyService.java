@@ -33,10 +33,15 @@ public class CompanyService {
         if (companyOptional.isPresent()) {
             Company existingCompany = companyOptional.get();
             existingCompany.setName(companyDetails.getName());
-            existingCompany.setAddress(companyDetails.getAddress());
             existingCompany.setEmail(companyDetails.getEmail());
             existingCompany.setPhone(companyDetails.getPhone());
             existingCompany.setCeo(companyDetails.getCeo());
+            existingCompany.setCountry(companyDetails.getCountry());
+            existingCompany.setProvince(companyDetails.getProvince());
+            existingCompany.setCity(companyDetails.getCity());
+            existingCompany.setPostalCode(companyDetails.getPostalCode());
+            existingCompany.setStreet(companyDetails.getStreet());
+            existingCompany.setHouseNumber(companyDetails.getHouseNumber());
             return companyRepository.save(existingCompany);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Task with ID " + id + " not found");

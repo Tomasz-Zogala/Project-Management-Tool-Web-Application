@@ -11,4 +11,10 @@ export interface User {
   password: string;
   role: string;
   experience: string;
+  country: string;
+  province: string;
+  city: string;
+  postalCode: string;
+  street: string;
+  houseNumber: string;
 }

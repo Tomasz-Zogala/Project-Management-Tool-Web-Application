@@ -45,6 +45,12 @@ public class UserService {
             existingUser.setPassword(userDetails.getPassword());
             existingUser.setRole(userDetails.getRole());
             existingUser.setExperience(userDetails.getExperience());
+            existingUser.setCountry(userDetails.getCountry());
+            existingUser.setProvince(userDetails.getProvince());
+            existingUser.setCity(userDetails.getCity());
+            existingUser.setPostalCode(userDetails.getPostalCode());
+            existingUser.setStreet(userDetails.getStreet());
+            existingUser.setHouseNumber(userDetails.getHouseNumber());
             return userRepository.save(existingUser);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User with ID " + id + " not found");

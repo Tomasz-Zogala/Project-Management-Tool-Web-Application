@@ -16,13 +16,19 @@ export class SignUpComponent {
 
   user: User = {
     companyId: {
-      address: "",
       ceo: "",
       companyId: 1,
       email: "",
       name: "",
       phone: "",
+      country: "",
+      province: "",
+      city: "",
+      postalCode: "",
+      street: "",
+      houseNumber: "",
     },
+    userId: 0,
     dayOfBirth: new Date(),
     email: "",
     experience: "",
@@ -31,7 +37,12 @@ export class SignUpComponent {
     password: "",
     phone: "",
     role: "",
-    userId: 0
+    country: "",
+    province: "",
+    city: "",
+    postalCode: "",
+    street: "",
+    houseNumber: "",
   }
 
   constructor(private userService : UserService) {}

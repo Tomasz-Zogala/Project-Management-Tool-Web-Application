@@ -1,8 +1,14 @@
 export interface Company {
-  companyId?: number;
+  companyId: number;
   name: string;
-  address: string;
   email: string;
   phone: string;
   ceo: string;
+  country: string;
+  province: string;
+  city: string;
+  postalCode: string;
+  street: string;
+  houseNumber: string;
 }
+
