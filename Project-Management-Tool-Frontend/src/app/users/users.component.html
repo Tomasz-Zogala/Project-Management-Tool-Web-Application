@@ -2,30 +2,35 @@
 
   <div class="filter-button">
     <div class="role-button">
-      <button> Developer </button>
-      <button> Project Manager </button>
-      <button> Manager </button>
-      <button> Admin </button>
+      <button (click)="setFilter('Developer')"> Developer </button>
+      <button (click)="setFilter('ProjectManager')"> Project Manager </button>
+      <button (click)="setFilter('Manager')"> Manager </button>
+      <button (click)="setFilter('Admin')"> Admin </button>
     </div>
+
+    <div class="reset-button">
+      <button (click)="currentFilter=''"> All </button>
+    </div>
+
     <div class="experience-button">
-      <button> Intern </button>
-      <button> Junior </button>
-      <button> Mid </button>
-      <button> Senior </button>
+      <button (click)="setFilter('Intern')"> Intern </button>
+      <button (click)="setFilter('Junior')"> Junior </button>
+      <button (click)="setFilter('Mid')"> Mid </button>
+      <button (click)="setFilter('Senior')"> Senior </button>
     </div>
   </div>
   <div class="user-container">
-    <div class="user" *ngFor="let user of users">
+    <div *ngFor="let user of users">
+      <div class="user" *ngIf="!currentFilter || user.role === currentFilter || user.experience == currentFilter">
+        <h1> {{ user.firstName }} {{ user.lastName }}</h1>
 
-      <h1> {{ user.firstName }} {{ user.lastName }}</h1>
-
-      <p>Company: {{ user.companyId.name }}</p>
-      <p>Email: {{ user.email }}</p>
-      <p>Phone Number: {{ user.phone }}</p>
-      <p>Address: {{ user.country }} {{ user.province }} {{ user.city }} {{ user.postalCode }} {{ user.street }} {{ user.houseNumber }} </p>
-      <p>Role: {{ user.role }}</p>
-      <p>Experience: {{ user.experience }}</p>
-
+        <p>Company: {{ user.companyId.name }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Phone Number: {{ user.phone }}</p>
+        <p>Address: {{ user.country }} {{ user.province }} {{ user.city }} {{ user.postalCode }} {{ user.street }} {{ user.houseNumber }} </p>
+        <p>Role: {{ user.role }}</p>
+        <p>Experience: {{ user.experience }}</p>
+      </div>
     </div>
   </div>
 </div>

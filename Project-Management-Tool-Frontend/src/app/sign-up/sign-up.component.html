@@ -5,18 +5,83 @@
     <form #userForm="ngForm" (ngSubmit)="signUp(userForm)">
 
       <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" [(ngModel)]="user.firstName" required>
+        <label for="companyId"> Company ID:</label>
+        <input type="number" id="companyId" name="companyId" required>
       </div>
 
       <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" [(ngModel)]="user.email" required>
+        <label for="firstName"> First Name:</label>
+        <input type="text" id="firstName" name="firstName" [(ngModel)]="user.firstName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName"> Last Name:</label>
+        <input type="text" id="lastName" name="lastName" [(ngModel)]="user.lastName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email"> Email:</label>
+        <input type="text" id="email" name="email" [(ngModel)]="user.email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone"> Email:</label>
+        <input type="text" id="phone" name="phone" [(ngModel)]="user.phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="dayOfBirth">Date of Birth:</label>
+        <input type="date" id="dayOfBirth" name="dayOfBirth" [(ngModel)]="user.dayOfBirth" required>
       </div>
 
       <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" [(ngModel)]="user.password" required>
+        <input type="text" id="password" name="password" [(ngModel)]="user.password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="repeatedPassword">Repeate Password:</label>
+        <input type="text" id="repeatedPassword" name="repeatedPassword" required>
+      </div>
+
+      <div class="form-group">
+        <label for="role">Role:</label>
+        <input type="text" id="role" [(ngModel)]="user.role" name="role" required>
+      </div>
+
+      <div class="form-group">
+        <label for="experience">Experience:</label>
+        <input type="text" id="experience" [(ngModel)]="user.experience" name="experience" required>
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" id="country" [(ngModel)]="user.country" name="country" required>
+      </div>
+
+      <div class="form-group">
+        <label for="province">Province:</label>
+        <input type="text" id="province" [(ngModel)]="user.province" name="province" required>
+      </div>
+
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" [(ngModel)]="user.city" name="city" required>
+      </div>
+
+      <div class="form-group">
+        <label for="postalCode">Postal Code:</label>
+        <input type="text" id="postalCode" [(ngModel)]="user.postalCode" name="postalCode" required>
+      </div>
+
+      <div class="form-group">
+        <label for="street">Street:</label>
+        <input type="text" id="street" [(ngModel)]="user.street" name="street" required>
+      </div>
+
+      <div class="form-group">
+        <label for="houseNumber">House Number:</label>
+        <input type="text" id="houseNumber" [(ngModel)]="user.houseNumber" name="houseNumber" required>
       </div>
 
       <button type="submit" [disabled]="userForm.invalid">Submit</button>

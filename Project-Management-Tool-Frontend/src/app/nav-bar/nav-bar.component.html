@@ -1,25 +1,28 @@
 <div class="container">
-    <h1 class="logo"> <a routerLink="/"> ProjectFlow </a> </h1>
-    <div *ngIf="this.authService.isLoggedIn" class="nav-bar">
-        <ul>
-          <li><a routerLink="/tasks"> Tasks </a></li>
-          <li><a routerLink="/projects"> Projects </a></li>
-          <li><a routerLink="/users"> Users </a></li>
-          <li><a routerLink="/companies"> Companies </a></li>
-          <li><a routerLink="/profile"> My Profile </a> </li>
-        </ul>
-    </div>
-    <div *ngIf="this.authService.isLoggedIn" class="right-nav-bar">
-        <ul>
-<!--          <li><a routerLink="/settings"> Setting </a></li>-->
-          <li><a routerLink="/" (click)="logOut()"> LogOut </a></li>
-        </ul>
-    </div>
-    <div *ngIf="!this.authService.isLoggedIn" class="right-nav-bar">
-        <ul>
-          <li><a routerLink="/signup"> Sign Up </a></li>
-          <li><a routerLink="/signin"> Sign In </a></li>
-        </ul>
-    </div>
+  <h1 class="logo"><a routerLink="/"> ProjectFlow </a></h1>
+  <div *ngIf="this.authService.isLoggedIn" class="nav-bar">
+    <ul>
+      <li><a routerLink="/tasks"> Tasks </a></li>
+      <li><a routerLink="/projects"> Projects </a></li>
+      <li><a routerLink="/users"> Users </a></li>
+      <li><a routerLink="/companies"> Companies </a></li>
+      <li *ngIf="authService.loggedUser.role === 'Admin' || authService.loggedUser.role === 'Manager'">
+        <a routerLink="/signup"> Add New Profile </a>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="this.authService.isLoggedIn" class="right-nav-bar">
+    <ul>
+      <!--          <li><a routerLink="/settings"> Setting </a></li>-->
+      <li><a routerLink="/profile"> My Profile </a></li>
+      <li><a routerLink="/" (click)="logOut()"> LogOut </a></li>
+    </ul>
+  </div>
+  <div *ngIf="!this.authService.isLoggedIn" class="right-nav-bar">
+    <ul>
+      <!--          <li><a routerLink="/signup"> Sign Up </a></li>-->
+      <li><a routerLink="/signin"> Sign In </a></li>
+    </ul>
+  </div>
 </div>
-<router-outlet />
+<router-outlet/>

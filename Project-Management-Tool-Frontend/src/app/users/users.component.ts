@@ -15,6 +15,11 @@ export class UsersComponent implements OnInit {
 
   constructor(private userService: UserService) {}
 
+  currentFilter: string = "";
+
+  setFilter(role: string): void {
+    this.currentFilter = role;
+  }
   ngOnInit() {
     this.userService.getAllUsers().subscribe(users => {
       this.users = users;
