@@ -10,24 +10,30 @@ $main-font-family: "Arial Black";
   margin-top: 100px;
   margin-bottom: 300px;
 }
+
 .logo {
   font-size: 52px;
 }
+
 .form-container {
   width: 300px;
   margin-top: 20px;
+
   h2 {
     font-size: 32px;
     text-align: center;
   }
 }
+
 .form-group {
   margin-bottom: 15px;
 }
+
 label {
   display: block;
   margin-bottom: 5px;
 }
+
 input, select {
   width: 100%;
   padding: 8px;
@@ -36,6 +42,7 @@ input, select {
   border-radius: 4px;
   font-family: $main-font-family;
 }
+
 button {
   width: 100%;
   background-color: $color_1;
@@ -46,6 +53,7 @@ button {
   cursor: pointer;
   font-family: $main-font-family;
   font-size: 18px;
+
   &:disabled {
     background-color: $mainBrightColor;
     color: $mainDarkColor;

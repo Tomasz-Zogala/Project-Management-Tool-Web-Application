@@ -9,18 +9,22 @@ $background-color_2: #3498db;
   padding: 20px;
   text-align: center;
 }
+
 .description-header {
   font-size: 40px;
   color: $color_1;
 }
+
 .key-features-header {
   font-size: 40px;
   color: $color_1;
 }
+
 .summary-header {
   font-size: 40px;
   color: $color_1;
 }
+
 .key-features {
   list-style: none;
   padding: 0;
@@ -28,6 +32,7 @@ $background-color_2: #3498db;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 10px;
+
   li {
     width: 280px;
     height: 140px;
@@ -38,10 +43,12 @@ $background-color_2: #3498db;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   }
 }
+
 .key-feature-topic {
   font-size: 24px;
   padding-bottom: 6px;
 }
+
 .sign-up-button {
   background-color: $background-color_2;
   color: $color_2;
@@ -52,6 +59,7 @@ $background-color_2: #3498db;
   margin-top: 20px;
   font-size: 16px;
 }
+
 .login-button {
   background-color: $background-color_2;
   color: $color_2;

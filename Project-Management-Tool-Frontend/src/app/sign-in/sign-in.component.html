@@ -1,23 +1,23 @@
 <div class="container">
-    <h1 class="logo"> ProjectFlow </h1>
+  <h1 class="logo"> ProjectFlow </h1>
 
-    <div class="form-container">
-        <h2>Sign In</h2>
+  <div class="form-container">
+    <h2>Sign In</h2>
 
-        <form #signInForm="ngForm" (ngSubmit)="signIn(signInForm)">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email" ngModel required>
-            </div>
+    <form #signInForm="ngForm" (ngSubmit)="signIn(signInForm)">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" ngModel required>
+      </div>
 
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" ngModel required>
-            </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" ngModel required>
+      </div>
 
-            <button type="submit" [disabled]="signInForm.invalid">Sign In</button>
-        </form>
-    </div>
+      <button type="submit" [disabled]="signInForm.invalid">Sign In</button>
+    </form>
+  </div>
 </div>
 
 <!--<p class="container">-->

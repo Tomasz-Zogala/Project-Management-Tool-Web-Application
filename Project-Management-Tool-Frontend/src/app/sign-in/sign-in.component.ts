@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {FormsModule, NgForm } from "@angular/forms";
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule, NgForm} from "@angular/forms";
 import {Router, RouterLink} from "@angular/router";
 import {AuthService} from "../services/auth.service";
 
@@ -12,9 +12,10 @@ import {AuthService} from "../services/auth.service";
   styleUrl: './sign-in.component.scss'
 })
 export class SignInComponent {
-  constructor(private authService : AuthService) {}
+  constructor(private authService: AuthService) {
+  }
 
-  signIn(signInForm : NgForm) {
+  signIn(signInForm: NgForm) {
     this.authService.signIn(signInForm.value.email, signInForm.value.password);
   }
 

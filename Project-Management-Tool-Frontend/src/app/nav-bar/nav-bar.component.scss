@@ -13,47 +13,59 @@ $mainDarkColor: #2c3e50;
   top: 0;
   border: 1px solid #4c5565;
 }
+
 .logo {
   margin: 0;
   font-size: 32px;
+
   a {
     text-decoration: none;
+
     &:visited {
       color: $mainBrightColor;
     }
+
     &:hover {
       color: $hoverColor;
     }
   }
 }
+
 .nav-bar {
   h1 {
     margin: 0;
     font-size: 24px;
   }
+
   ul {
     list-style: none;
     padding: 0;
     display: flex;
   }
+
   li {
     &:not(:last-child) {
       margin-right: 24px;
     }
+
     font-size: 18px;
     cursor: pointer;
     transition: color 0.3s ease;
   }
+
   a {
     text-decoration: none;
+
     &:visited {
       color: $mainBrightColor;
     }
+
     &:hover {
       color: $hoverColor;
     }
   }
 }
+
 .right-nav-bar {
   ul {
     list-style: none;
@@ -61,18 +73,23 @@ $mainDarkColor: #2c3e50;
     margin: 0;
     display: flex;
   }
+
   li {
     &:not(:last-child) {
       margin-right: 24px;
     }
+
     cursor: pointer;
     font-size: 22px;
   }
+
   a {
     text-decoration: none;
+
     &:visited {
       color: $mainBrightColor;
     }
+
     &:hover {
       color: $hoverColor;
     }

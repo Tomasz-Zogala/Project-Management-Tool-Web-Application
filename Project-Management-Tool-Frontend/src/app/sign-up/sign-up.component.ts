@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, NgForm } from "@angular/forms";
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule, NgForm} from "@angular/forms";
 import {User} from "../models/user.model";
 import {UserService} from "../services/user.service";
-import {Company} from "../models/company.model";
+import {CompanyService} from "../services/company.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -16,11 +16,9 @@ export class SignUpComponent {
 
   user: User = this.userService.blankUser;
 
-  constructor(private userService : UserService) {}
+  constructor(private userService: UserService) {
+  }
 
   signUp(userForm: NgForm) {
-    this.user.firstName = userForm.value.name;
-    this.user.email = userForm.value.email;
-    this.user.password = userForm.value.password;
   }
 }

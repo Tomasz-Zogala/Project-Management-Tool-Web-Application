@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {AuthService} from "../services/auth.service";
 
 @Component({
@@ -11,7 +11,7 @@ import {AuthService} from "../services/auth.service";
 })
 export class ProfileComponent {
 
-constructor(public authService : AuthService) {
-}
+  constructor(public authService: AuthService) {
+  }
 
 }

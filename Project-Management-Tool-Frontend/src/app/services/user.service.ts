@@ -22,7 +22,7 @@ export class UserService {
     return this.http.get<User>(url);
   }
 
-  blankUser : User = {
+  blankUser: User = {
     companyId: {
       ceo: "",
       companyId: 1,

@@ -10,11 +10,12 @@ import {User} from "../models/user.model";
   providedIn: 'root',
 })
 export class AuthService {
-  public isLoggedIn : boolean = false;
-  public loggedUser : User = this.userService.blankUser;
+  public isLoggedIn: boolean = false;
+  public loggedUser: User = this.userService.blankUser;
 
-  constructor(private userService : UserService, private router : Router) {
+  constructor(private userService: UserService, private router: Router) {
   }
+
   signIn(email: string, password: string) {
     this.userService.getUserByEmail(email).pipe(
       map((user) => {

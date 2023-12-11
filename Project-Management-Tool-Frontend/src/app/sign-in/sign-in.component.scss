@@ -11,24 +11,30 @@ $background-color_2: #ecf0f1;
   margin-top: 100px;
   margin-bottom: 300px;
 }
+
 .logo {
   font-size: 52px;
 }
+
 .form-container {
   width: 300px;
   margin-top: 20px;
+
   h2 {
     font-size: 32px;
     text-align: center;
   }
 }
+
 .form-group {
   margin-bottom: 15px;
 }
+
 label {
   display: block;
   margin-bottom: 5px;
 }
+
 input {
   width: 100%;
   padding: 8px;
@@ -37,6 +43,7 @@ input {
   border-radius: 4px;
   font-family: $font-family_1;
 }
+
 button {
   width: 100%;
   background-color: $background-color_1;
@@ -47,6 +54,7 @@ button {
   cursor: pointer;
   font-family: $font-family_1;
   font-size: 18px;
+
   &:disabled {
     background-color: $background-color_2;
     color: $color_2;
