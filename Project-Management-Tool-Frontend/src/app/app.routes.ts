@@ -8,6 +8,7 @@ import {TasksComponent} from "./tasks/tasks.component";
 import {PageErrorComponent} from "./page-error/page-error.component";
 import {UsersComponent} from "./users/users.component";
 import {ProfileComponent} from "./profile/profile.component";
+import {TempComponent} from "./temp/temp.component";
 
 export const routes: Routes = [
   {path: '', component: TitlePageComponent},
@@ -18,5 +19,6 @@ export const routes: Routes = [
   {path: 'companies', component: CompanyComponent},
   {path: 'signup', component: SignUpComponent},
   {path: 'signin', component: SignInComponent},
+  {path: 'projects/:id/tasks', component: TempComponent},
   {path: '**', component: PageErrorComponent},
 ];

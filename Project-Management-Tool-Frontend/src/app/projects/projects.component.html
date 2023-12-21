@@ -1,15 +1,37 @@
 <div class="container">
-  <div class="project" *ngFor="let project of projects">
-    <div>
 
-      <h1>{{ project.name }}</h1>
+  <div class="filter-button">
+    <div class="priority-button">
+      <button (click)="setFilter('High')"> High</button>
+      <button (click)="setFilter('Medium')"> Medium</button>
+      <button (click)="setFilter('Low')"> Low</button>
+    </div>
 
-      <p>Company: {{ project.companyId.name }}</p>
-      <p>Manager: {{ project.managerId.firstName }} {{ project.managerId.lastName }}</p>
-      <p>Description: {{ project.description }} </p>
-      <p>Priority: {{ project.priority }} </p>
-      <p>Status: {{ project.status }} </p>
+    <div class="reset-button">
+      <button (click)="currentFilter=''"> All</button>
+    </div>
 
+    <div class="status-button">
+      <button (click)="setFilter('NotStarted')"> Not Started</button>
+      <button (click)="setFilter('InProgress')"> In Progress</button>
+      <button (click)="setFilter('Completed')"> Completed</button>
+      <button (click)="setFilter('Archived')"> Archived</button>
+    </div>
+  </div>
+  <div class="project-container">
+    <div *ngFor="let project of projects">
+      <div class="project"
+           *ngIf="!currentFilter || project.priority === currentFilter || project.status == currentFilter"
+           style="cursor: pointer;"
+           (click)="selectProject(project)">
+        <h1>{{ project.name }}</h1>
+
+        <p>Company: {{ project.companyId.name }}</p>
+        <p>Manager: {{ project.managerId.firstName }} {{ project.managerId.lastName }}</p>
+        <p>Description: {{ project.description }} </p>
+        <p>Priority: {{ project.priority }} </p>
+        <p>Status: {{ project.status }} </p>
+      </div>
     </div>
   </div>
 </div>
