@@ -3,3 +3,4 @@ Project-Management-Tool-Frontend.iml
 .idea
 .DS_Store
 Project-Management-Tool-Backend/projectflow/src/main/resources/application-local.properties
+Project-Management-Tool-Backend/.DS_Store
