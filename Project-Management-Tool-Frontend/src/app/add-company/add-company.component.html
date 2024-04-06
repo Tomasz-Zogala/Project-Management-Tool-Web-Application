@@ -1,0 +1,61 @@
+<div class="container">
+  <h1 class="logo"> Company Form </h1>
+
+  <div class="form-container">
+    <form #companyForm="ngForm" (ngSubmit)="addCompany(companyForm)">
+
+      <div class="form-group">
+        <label for="companyName"> Company name:</label>
+        <input type="text" id="companyName" name="companyName"  [(ngModel)]="company.name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email"> Email:</label>
+        <input type="text" id="email" name="email" [(ngModel)]="company.email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNumber"> Phone number:</label>
+        <input type="number" id="phoneNumber" name="phoneNumber" [(ngModel)]="company.phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="CEO"> CEO:</label>
+        <input type="text" id="CEO" name="CEO" [(ngModel)]="company.ceo" required>
+      </div>
+
+      <div class="form-group">
+        <label for="country"> Country:</label>
+        <input type="text" id="country" name="country" [(ngModel)]="company.country" required>
+      </div>
+
+      <div class="form-group">
+        <label for="province"> Province:</label>
+        <input type="text" id="province" name="province" [(ngModel)]="company.province" required>
+      </div>
+
+      <div class="form-group">
+        <label for="city"> City:</label>
+        <input type="text" id="city" name="city" [(ngModel)]="company.city" required>
+      </div>
+
+      <div class="form-group">
+        <label for="postalCode"> Postal Code:</label>
+        <input type="number" id="postalCode" name="postalCode" [(ngModel)]="company.postalCode" required>
+      </div>
+
+      <div class="form-group">
+        <label for="street"> Street:</label>
+        <input type="text" id="street" name="street" [(ngModel)]="company.street" required>
+      </div>
+
+      <div class="form-group">
+        <label for="houseNumber"> House Number:</label>
+        <input type="number" id="houseNumber" name="houseNumber" [(ngModel)]="company.houseNumber" required>
+      </div>
+
+
+      <button type="submit" [disabled]="companyForm.invalid" >Submit</button>
+    </form>
+  </div>
+</div>

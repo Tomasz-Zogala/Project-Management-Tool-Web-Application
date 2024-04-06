@@ -28,7 +28,7 @@ public class Project {
     private String priority;
     private String status;
     private Integer progress;
-
+    private Boolean archived;
     public Long getProjectId() {
         return projectId;
     }
@@ -108,4 +108,12 @@ public class Project {
     public void setProgress(Integer progress) {
         this.progress = progress;
     }
+    public Boolean getArchived() {
+        return archived;
+    }
+
+    public void setArchived(Boolean archived) {
+        this.archived = archived;
+    }
+
 }

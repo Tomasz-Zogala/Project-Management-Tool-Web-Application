@@ -31,16 +31,17 @@ $background-color_2: #3498db;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 5px;
 
   li {
     width: 280px;
-    height: 140px;
+    height: 180px;
     margin-bottom: 30px;
     background-color: $background-color_1;
     padding: 15px;
     border-radius: 20px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    justify-content: center;
   }
 }
 

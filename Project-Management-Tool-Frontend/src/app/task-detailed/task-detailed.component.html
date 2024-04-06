@@ -1,0 +1,42 @@
+<style>
+  .disabled button, .disabled select {
+    color: #999;
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+</style>
+
+<div *ngIf="authService.loggedUser.role === 'Manager' || authService.loggedUser.role === 'ProjectManager'" class="filter-button">
+  <div class="add-task-button" [ngClass]="{ 'disabled': project.archived }">
+    <button (click)="routeToAddTask()" [disabled]="project.archived">Add task to project</button>
+    <button (click)="toggleDelete()" class="delete-button" [disabled]="project.archived">Delete task</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="task" *ngFor="let task of displayTasks">
+    <div class="company-card" [class.show-delete]="deleteMode">
+      <h1>{{ task.name }} </h1>
+      <button *ngIf="deleteMode" class="delete-circle" (click)="deleteTask(task)">X</button>
+      <h2>{{ task.projectId.name }} </h2>
+
+      <p>Description: {{ task.description }}</p>
+      <p>Assigned By: {{ task.assignedById.firstName }} {{ task.assignedById.lastName }}</p>
+      <p>Assigned To: {{ task.assignedToId.firstName }} {{ task.assignedToId.lastName }}</p>
+      <p>Priority: {{ task.priority }}</p>
+      <ng-container *ngIf="authService.loggedUser.role === 'Manager'; else roleText">
+        <div class="statusList" [ngClass]="{ 'disabled': project.archived }">
+          <label>Status: </label>
+          <select [(ngModel)]="task.status" (ngModelChange)="onSelectedChange(task ,$event)" [disabled]="project.archived">
+            <option value="NotStarted">NotStarted</option>
+            <option value="InProgress">InProgress</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+      </ng-container>
+      <ng-template #roleText>
+        <p class="field">Status: {{ task.status }}</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

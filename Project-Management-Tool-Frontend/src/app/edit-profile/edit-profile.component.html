@@ -1,0 +1,104 @@
+<div class="container">
+  <div class="profile">
+    <p class="greetings">
+      Hello! {{ authService.loggedUser.firstName }} {{ authService.loggedUser.lastName }} <br>
+      Here are some information about You!
+    </p>
+
+
+
+    <div class="field">
+      <label>First Name:</label>
+      <input type="text" [(ngModel)]="authService.loggedUser.firstName">
+    </div>
+
+    <div class="field">
+      <label>Last Name:</label>
+      <input type="text" [(ngModel)]="authService.loggedUser.lastName">
+    </div>
+
+
+
+    <p class="field">Company: {{ authService.loggedUser.companyId.name }}</p>
+
+
+
+    <ng-container *ngIf="authService.loggedUser.role === 'Admin'; else emailText">
+      <div class="field">
+        <label>Email:</label>
+        <input type="email" [(ngModel)]="authService.loggedUser.email">
+      </div>
+    </ng-container>
+    <ng-template #emailText>
+      <p class="field">Email: {{ authService.loggedUser.email }}</p>
+    </ng-template>
+
+
+    <div class="field">
+      <label>Phone Number:</label>
+      <input type="tel" [(ngModel)]="authService.loggedUser.phone">
+    </div>
+
+    <div class="field">
+      <label>Country:</label>
+      <input type="text" [(ngModel)]="authService.loggedUser.country">
+    </div>
+
+    <div class="field">
+      <label>Province:</label>
+      <input type="text" [(ngModel)]="authService.loggedUser.province">
+    </div>
+
+    <div class="field">
+      <label>City:</label>
+      <input type="text" [(ngModel)]="authService.loggedUser.city">
+    </div>
+
+    <div class="field">
+      <label>Postal Code:</label>
+      <input type="text" [(ngModel)]="authService.loggedUser.postalCode">
+    </div>
+
+    <div class="field">
+      <label>Street:</label>
+      <input type="text" [(ngModel)]="authService.loggedUser.street">
+    </div>
+
+    <div class="field">
+      <label>House Number:</label>
+      <input type="text" [(ngModel)]="authService.loggedUser.houseNumber">
+    </div>
+
+    <ng-container *ngIf="authService.loggedUser.role === 'Admin'; else roleText">
+      <div class="field">
+        <label for="role">Role:</label>
+        <select id="role" name="role" [(ngModel)]="authService.loggedUser.role">
+          <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+        </select>
+      </div>
+    </ng-container>
+    <ng-template #roleText>
+      <p class="field">Role: {{ authService.loggedUser.role }}</p>
+    </ng-template>
+
+
+    <ng-container *ngIf="authService.loggedUser.role === 'Admin'; else experienceText">
+      <div class="field">
+        <label for="experience">Experience:</label>
+        <select id="experience" name="experience" [(ngModel)]="authService.loggedUser.experience">
+          <option *ngFor="let experience of experiences" [value]="experience">{{ experience }}</option>
+        </select>
+      </div>
+    </ng-container>
+    <ng-template #experienceText>
+      <p class="field">Experience: {{ authService.loggedUser.experience }}</p>
+    </ng-template>
+
+
+
+    <div class="button-container">
+      <button routerLink="/profile" (click)="updateProfile()">Save Changes</button>
+    </div>
+
+  </div>
+</div>

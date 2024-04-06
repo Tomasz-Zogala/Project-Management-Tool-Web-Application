@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {User} from "../models/user.model";
+import {Company} from "../models/company.model";
 
 
 @Injectable({
@@ -20,6 +21,23 @@ export class UserService {
   getUserByEmail(email: string): Observable<User> {
     const url = `${this.apiUrl}/by-email/${email}`;
     return this.http.get<User>(url);
+  }
+
+  getUserById(id: number):  Observable<User> {
+    return this.http.get<User>((`${this.apiUrl}/${id}`));
+  }
+
+  updateUser(user: User): Observable<User> {
+    const url = `${this.apiUrl}/${user.userId}`;
+    return this.http.put<User>(url, user);
+  }
+
+  createUser(user: User): Observable<User> {
+    return this.http.post<User>(this.apiUrl, user);
+  }
+
+  deleteUser(id: number | undefined): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 
   blankUser: User = {

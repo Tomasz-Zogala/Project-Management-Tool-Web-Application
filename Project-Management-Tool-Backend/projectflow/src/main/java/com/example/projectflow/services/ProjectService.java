@@ -42,6 +42,7 @@ public class ProjectService {
             existingProject.setPriority(projectDetails.getPriority());
             existingProject.setStatus(projectDetails.getStatus());
             existingProject.setProgress(projectDetails.getProgress());
+            existingProject.setArchived(projectDetails.getArchived());
             return projectRepository.save(existingProject);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Task with ID " + id + " not found");

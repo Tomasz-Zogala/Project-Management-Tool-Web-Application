@@ -6,9 +6,6 @@
       <li><a routerLink="/projects"> Projects </a></li>
       <li><a routerLink="/users"> Users </a></li>
       <li><a routerLink="/companies"> Companies </a></li>
-      <li *ngIf="authService.loggedUser.role === 'Admin' || authService.loggedUser.role === 'Manager'">
-        <a routerLink="/signup"> Add New Profile </a>
-      </li>
     </ul>
   </div>
   <div *ngIf="this.authService.isLoggedIn" class="right-nav-bar">

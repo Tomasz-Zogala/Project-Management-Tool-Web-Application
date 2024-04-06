@@ -1,5 +1,7 @@
 <div class="container">
-
+  <div class="labels">
+    <label>Filters:</label>
+  </div>
   <div class="filter-button">
     <div class="role-button">
       <button (click)="setFilter('Developer')"> Developer</button>
@@ -17,13 +19,15 @@
       <button (click)="setFilter('Junior')"> Junior</button>
       <button (click)="setFilter('Mid')"> Mid</button>
       <button (click)="setFilter('Senior')"> Senior</button>
+      <button *ngIf="authService.loggedUser.role === 'Admin'" routerLink="/signup">Add user</button>
+      <button *ngIf="authService.loggedUser.role === 'Admin'" (click)="toggleDelete()" class="delete-button">Delete</button>
     </div>
   </div>
   <div class="user-container">
-    <div *ngFor="let user of users">
+    <div *ngFor="let user of displayUser">
       <div class="user" *ngIf="!currentFilter || user.role === currentFilter || user.experience == currentFilter">
         <h1> {{ user.firstName }} {{ user.lastName }}</h1>
-
+        <button *ngIf="deleteMode" class="delete-circle" (click)="deleteUser(user)">X</button>
         <p>Company: {{ user.companyId.name }}</p>
         <p>Email: {{ user.email }}</p>
         <p>Phone Number: {{ user.phone }}</p>

@@ -1,0 +1,66 @@
+<div class="container">
+  <h1 class="logo"> Task Form </h1>
+
+  <div class="form-container">
+    <form #taskForm="ngForm" (ngSubmit)="addTask(taskForm)">
+
+      <div class="form-group">
+        <label for="taskName"> Task name:</label>
+        <input type="text" id="taskName" name="taskName" [(ngModel)]="task.name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="projectId"> Project:</label>
+        <input type="text" id="projectId" name="projectId" [value]="project" [(ngModel)]="project.name" required disabled>
+      </div>
+
+
+      <div class="form-group">
+        <label for="taskDescription"> Description:</label>
+        <input type="text" id="taskDescription" name="taskDescription"  [(ngModel)]="task.description" required>
+      </div>
+
+      <div class="form-group">
+        <label for="assignedById"> Assigned By:</label>
+        <select id="assignedById" name="assignedById" [(ngModel)]="task.assignedById" required>
+          <option *ngFor="let manager of managers" [value]="manager.userId">{{ manager.firstName }} {{ manager.lastName }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="assignedToId">Assigned To:</label>
+        <select id="assignedToId" name="assignedToId" [(ngModel)]="task.assignedToId" required>
+          <option *ngFor="let developer of developers" [value]="developer.userId">{{ developer.firstName }} {{ developer.lastName }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="taskStartDate"> Start Date:</label>
+        <input type="date" id="taskStartDate" name="taskStartDate" [(ngModel)]="task.startDate" required>
+      </div>
+
+      <div class="form-group">
+        <label for="taskEndDate"> End Date:</label>
+        <input type="date" id="taskEndDate" name="taskEndDate" [(ngModel)]="task.endDate" required>
+      </div>
+
+      <div class="form-group">
+        <label for="taskPriority">Priority:</label>
+        <select id="taskPriority" name="taskPriority" [(ngModel)]="task.priority" required>
+          <option *ngFor="let priority of taskPriorities" [value]="priority">{{ priority }}</option>
+        </select>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="taskStatus">Status:</label>
+        <select id="taskStatus" name="taskPriority" [(ngModel)]="task.status" required>
+          <option *ngFor="let status of taskStatus" [value]="status">{{ status }}</option>
+        </select>
+      </div>
+
+      <button type="submit" [disabled]="taskForm.invalid">Submit</button>
+    </form>
+  </div>
+</div>

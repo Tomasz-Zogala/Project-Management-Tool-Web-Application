@@ -1,0 +1,60 @@
+<div class="container">
+    <h1 class="logo"> Project Form </h1>
+
+    <div class="form-container">
+        <form #projectForm="ngForm" (ngSubmit)="addProject(projectForm)">
+
+            <div class="form-group">
+                <label for="projectName"> Project name:</label>
+                <input type="text" id="projectName" name="projectName"  [(ngModel)]="project.name" required>
+            </div>
+
+          <div class="form-group">
+            <label for="companyId"> Company name:</label>
+            <select id="companyId" name="companyId" [(ngModel)]="project.companyId" required>
+              <option *ngFor="let company of companies" [value]="company.companyId">{{ company.name }}</option>
+            </select>
+          </div>
+
+            <div class="form-group">
+                <label for="managerId"> Manager:</label>
+                <select id="managerId" name="managerId" [(ngModel)]="project.managerId" required>
+                  <option *ngFor="let user of users" [value]="user.userId">{{ user.firstName }} {{ user.lastName }}</option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="projectDescription"> Description:</label>
+                <input type="text" id="projectDescription" name="projectDescription" [(ngModel)]="project.description" required>
+            </div>
+
+            <div class="form-group">
+                <label for="taskStartDate"> Start Date:</label>
+                <input type="date" id="taskStartDate" name="taskStartDate" [(ngModel)]="project.startDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="taskEndDate"> End Date:</label>
+                <input type="date" id="taskEndDate" name="taskEndDate" [(ngModel)]="project.endDate" required>
+            </div>
+
+          <div class="form-group">
+            <label for="projectPriority">Priority:</label>
+            <select id="projectPriority" name="projectPriority" [(ngModel)]="project.priority" required>
+              <option *ngFor="let priority of projectPriorities" [value]="priority">{{ priority }}</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label for="projectStatus">Status:</label>
+            <select id="projectStatus" name="projectStatus" [(ngModel)]="project.status" required>
+              <option *ngFor="let status of projectStatus" [value]="status">{{ status }}</option>
+            </select>
+          </div>
+
+            <button type="submit" [disabled]="projectForm.invalid">Submit</button>
+        </form>
+    </div>
+</div>

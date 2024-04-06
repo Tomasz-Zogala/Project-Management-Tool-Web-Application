@@ -12,4 +12,5 @@ export interface Project {
   priority: string;
   status: string;
   progress: number;
+  archived: boolean;
 }

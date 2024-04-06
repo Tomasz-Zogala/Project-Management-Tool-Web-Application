@@ -1,10 +1,14 @@
+<div  *ngIf="authService.loggedUser.role === 'Admin'" class="buttons">
+  <button routerLink="/add-company">Add company</button>
+  <button (click)="toggleDelete()" class="delete-button">Delete</button>
+</div>
 <div class="container">
-  <div class="company" *ngFor="let company of companies">
-    <div class="company-card">
+  <div class="company" *ngFor="let company of displayCompanies">
+    <div class="company-card" [class.show-delete]="deleteMode">
       <div class="company-info">
 
         <h1>{{ company.name }}</h1>
-
+        <button *ngIf="deleteMode" class="delete-circle" (click)="deleteCompany(company)">X</button>
         <p>Description: {{ company.name }}</p>
         <p>Email: {{ company.email }} </p>
         <p>Phone Number: {{ company.phone }} </p>
@@ -12,11 +16,11 @@
         <p>
           Address: {{ company.country }} {{ company.province }} {{ company.city }} {{ company.postalCode }} {{ company.street }} {{ company.houseNumber }}
         </p>
-
       </div>
       <div class="company-logo">
         <!--  LOGOS TO DO    -->
       </div>
+
     </div>
   </div>
 </div>

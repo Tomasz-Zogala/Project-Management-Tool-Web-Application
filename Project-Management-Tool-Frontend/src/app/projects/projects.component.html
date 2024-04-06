@@ -1,3 +1,6 @@
+<div class="labels">
+  <label>Filters:</label>
+</div>
 <div class="container">
 
   <div class="filter-button">
@@ -16,21 +19,32 @@
       <button (click)="setFilter('InProgress')"> In Progress</button>
       <button (click)="setFilter('Completed')"> Completed</button>
       <button (click)="setFilter('Archived')"> Archived</button>
+      <button *ngIf="authService.loggedUser.role === 'Manager' || authService.loggedUser.role === 'ProjectManager'" routerLink="/add-project">Add project</button>
+      <button *ngIf="authService.loggedUser.role === 'Manager' || authService.loggedUser.role === 'ProjectManager'" (click)="toggleDelete()" class="delete-button">Delete</button>
     </div>
   </div>
+
   <div class="project-container">
-    <div *ngFor="let project of projects">
-      <div class="project"
+    <div *ngFor="let project of displayProjects">
+      <div class="project" [class.show-delete]="deleteMode"
            *ngIf="!currentFilter || project.priority === currentFilter || project.status == currentFilter"
            style="cursor: pointer;"
-           (click)="selectProject(project)">
+           (click)="deleteMode ? $event.stopImmediatePropagation() : selectProject(project, $event)">
+        <div class="statusButtons">
+          <button class="completeButton" (click)="completeButtonClick(project)">Complete</button>
+          <button class="archiveButton" (click)="archiveButtonClick(project)">Archive</button>
+        </div>
         <h1>{{ project.name }}</h1>
-
+        <button *ngIf="deleteMode" class="delete-circle" (click)="deleteProject(project)">X</button>
         <p>Company: {{ project.companyId.name }}</p>
         <p>Manager: {{ project.managerId.firstName }} {{ project.managerId.lastName }}</p>
         <p>Description: {{ project.description }} </p>
         <p>Priority: {{ project.priority }} </p>
         <p>Status: {{ project.status }} </p>
+        <div class="progressBar">
+          <div class="progress" [style.width.%]="getProgressBarWidth(project)"
+               [style.visibility]="getProgressBarWidth(project) === 0 ? 'hidden' : 'visible'"></div>
+        </div>
       </div>
     </div>
   </div>
